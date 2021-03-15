@@ -59,13 +59,13 @@ begin  -- sim
       DATA_SPI_OK_i <= '1';
       wait until CLK_i = '0';
       DATA_SPI_OK_i <= '0';
-      wait until END_SPI_i = '1';
+      --wait until END_SPI_i = '1';
       wait for 23 ns;
     end gen_dato;
 
   begin  -- process
 
-    wait for 333 ns;
+    wait for 100 ns;
     gen_dato('0'&x"65");
     gen_dato('1'&x"80");
     gen_dato('0'&x"ff");
