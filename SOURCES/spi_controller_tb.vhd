@@ -2,6 +2,8 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
 
 -------------------------------------------------------------------------------
 
@@ -26,6 +28,8 @@ architecture sim of spi_controller_tb is
   signal END_SPI_i : std_logic;
   signal FC_i      : std_logic;
   signal CE_i      : std_logic;
+  signal DATA_SPI_REG_i: std_logic_vector (7 downto 0);
+  signal COUNTER_REG_i : unsigned(2 downto 0);
   
 
 begin  -- sim
@@ -42,7 +46,9 @@ begin  -- sim
       SCLK        => SCLK_i,
       END_SPI     => END_SPI_i,
       FC          => FC_i,
-      CE          => CE_i);
+      CE          => CE_i,
+      DATA_SPI_REG => DATA_SPI_REG_i,
+      COUNTER_REG => COUNTER_REG_i);
 
 
   SPI_DEV : entity work.spi_device

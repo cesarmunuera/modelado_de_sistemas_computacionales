@@ -15,15 +15,18 @@ entity spi_controller is
          SCLK        : out std_logic;
          END_SPI     : out std_logic;
          FC          : inout std_logic;
-         CE          : inout std_logic);
+         CE          : inout std_logic;
+         DATA_SPI_REG: inout std_logic_vector (7 downto 0);
+         COUNTER_REG : inout unsigned(2 downto 0));
 end spi_controller;
 
 architecture rtl of spi_controller is
-  signal DATA_SPI_REG    :      std_logic_vector (7 downto 0);  --bloque 1, tiene los 8 primeros bits de data_spi 
-  signal COUNTER_REG     :      unsigned(2 downto 0);           --bloque 2, vector para elegir que bits salen a sdin
+  --signal DATA_SPI_REG    :      std_logic_vector (7 downto 0);  --bloque 1, tiene los 8 primeros bits de data_spi 
+  --signal COUNTER_REG     :      unsigned(2 downto 0);           --bloque 2, vector para elegir que bits salen a sdin
   signal CONT            :      unsigned (6 downto 0);          --contador para bloque 3 obtener fc
  --signal FC              :      std_logic;                      --clock enable para obtener SCLK   
   signal SCLK_AUX        :      std_logic;                      --Señal auxiliar de SCLK 
+  signal SCLK_AUX_2      :      std_logic;
   --signal CE              :      std_logic;                      --Señal ClockEnable generada en el Bloque 3      
   
 begin
@@ -136,6 +139,7 @@ begin
     elsif (CLK'event and CLK = '1') then
         if (FC = '1') then
             SCLK <= SCLK_AUX;
+            SCLK_AUX_2 <= SCLK_AUX;
             SCLK_AUX <= NOT SCLK_AUX;
         end if;      
     end if;
@@ -143,9 +147,9 @@ end process;
 
 -- En este proceso generamos la señal de CE que se usa anteriormente. Esta señal estara activa cuando 
 -- SCLK y FC esten activos
-process (FC,SCLK_AUX)
+process (FC,SCLK_AUX_2)
 begin 
-    CE <= FC AND SCLK_AUX;
+    CE <= FC AND SCLK_AUX_2;
 end process;    
         
 end rtl;
