@@ -24,7 +24,9 @@ architecture sim of spi_controller_tb is
   signal SDIN_i    : std_logic;
   signal SCLK_i    : std_logic;
   signal END_SPI_i : std_logic;
-  signal FC_i        : std_logic;
+  signal FC_i      : std_logic;
+  signal CE_i      : std_logic;
+  
 
 begin  -- sim
 
@@ -39,7 +41,8 @@ begin  -- sim
       SDIN        => SDIN_i,
       SCLK        => SCLK_i,
       END_SPI     => END_SPI_i,
-      FC          => FC_i);
+      FC          => FC_i,
+      CE          => CE_i);
 
 
   SPI_DEV : entity work.spi_device

@@ -15,7 +15,7 @@ entity spi_controller is
          SCLK        : out std_logic;
          END_SPI     : out std_logic;
          FC          : inout std_logic;
-         );
+         CE          : inout std_logic);
 end spi_controller;
 
 architecture rtl of spi_controller is
@@ -143,11 +143,9 @@ end process;
 
 -- En este proceso generamos la señal de CE que se usa anteriormente. Esta señal estara activa cuando 
 -- SCLK y FC esten activos
-process (CLK)
+process (FC,SCLK_AUX)
 begin 
-    if (CLK'event and CLK = '1') then
-        CE <= FC AND SCLK_AUX;
-    end if;
+    CE <= FC AND SCLK_AUX;
 end process;    
         
 end rtl;
