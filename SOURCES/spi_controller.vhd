@@ -20,7 +20,9 @@ architecture rtl of spi_controller is
   signal DATA_SPI_REG    :      std_logic_vector (7 downto 0);  --bloque 1, tiene los 8 primeros bits de data_spi 
   signal COUNTER_REG     :      unsigned(2 downto 0);           --bloque 2, vector para elegir que bits salen a sdin
   signal CONT            :      unsigned (6 downto 0);          --contador para bloque 3 obtener fc
-  signal FC              :      std_logic;                      --clock enable para obtener SCLK          
+  signal FC              :      std_logic;                      --clock enable para obtener SCLK   
+  signal SCLK_AUX        :      std_logic;                      --Señal auxiliar de SCLK 
+  signal CE              :      std_logic;                      --Señal ClockEnable generada en el Bloque 3      
   
 begin
 
@@ -40,15 +42,16 @@ process (CLK, RST)
 end process;
 
 --BLOQUE 1 pasamos la señal DATA_SPI desde el bit 0 al bit 7 con un biestable D
+--DATA_SPI_OK funciona como CLOCK ENABLE
 process (CLK, RST) 
-    begin
-        if (RST = '1') then
-            DATA_SPI_REG <= (others => '0') ;
-        elsif (CLK'event and CLK = '1')
-            if (DATA_SPI_OK = '1') then --DATA_SPI_OK funciona como CLOCK ENABLE
-                DATA_SPI_REG <= DATA_SPI (7 downto 0);
-            end if;
+begin
+    if (RST = '1') then
+        DATA_SPI_REG <= (others => '0') ;
+    elsif (CLK'event and CLK = '1') then
+        if (DATA_SPI_OK = '1') then
+            DATA_SPI_REG <= DATA_SPI (7 downto 0);
         end if;
+    end if;
 end process;
 
 
@@ -61,8 +64,8 @@ process (CLK, RST)
 begin
     if (RST='1') then
         COUNTER_REG <= (others => '1');
-    elsif (CLK='1' and CLK')event then
-        if (<clock_enable>='1') then
+    elsif (CLK='1' and CLK'event) then
+        if (CE ='1') then
             if (COUNTER_REG) = 0 then
                 COUNTER_REG <= (others => '1'); 
             else
@@ -72,24 +75,25 @@ begin
     end if;
 end process;
 
---BLOQUE 2: En este proceso, creamos un biestable D junto con un miltiplexor. Gracias al contador anterior, podemos
---          elegir la posicion del array correspondiente para serializarlo.
+-- En este proceso, creamos un biestable D junto con un miltiplexor. Gracias al contador anterior, podemos
+-- elegir la posicion del array correspondiente para serializarlo.
 process (CLK, RST)
 begin
     if (RST = '1') then
         SDIN <= '0';
     elsif (CLK'event and CLK = '1') then
         case COUNTER_REG is
-            when 0  => SDIN <= DATA_SPI_REG(0);
-            when 1  => SDIN <= DATA_SPI_REG(1);
-            when 2  => SDIN <= DATA_SPI_REG(2);
-            when 3  => SDIN <= DATA_SPI_REG(3);
-            when 4  => SDIN <= DATA_SPI_REG(4);
-            when 5  => SDIN <= DATA_SPI_REG(5);
-            when 6  => SDIN <= DATA_SPI_REG(6);
-            when 7  => SDIN <= DATA_SPI_REG(7);
+            when "0"  => SDIN <= DATA_SPI_REG(0);
+            when "1"  => SDIN <= DATA_SPI_REG(1);
+            when "10"  => SDIN <= DATA_SPI_REG(2);
+            when "11"  => SDIN <= DATA_SPI_REG(3);
+            when "100"  => SDIN <= DATA_SPI_REG(4);
+            when "101"  => SDIN <= DATA_SPI_REG(5);
+            when "110"  => SDIN <= DATA_SPI_REG(6);
+            when "111"  => SDIN <= DATA_SPI_REG(7);
+        end case;
     end if;
-end process
+end process;
 
 
 -------------------------------------------  BLOQUE 3 ----------------------------------------------
@@ -97,16 +101,16 @@ end process
 
 --BLOQUE 3: Genera CE, SCLK y END_SPI, con la entrada DATA_SPI_OK. 
 
---Generamos FC con PRESCALER; cada N ciclos de CLK se genera un pulso de FC de 10 ns
--- El factor de división es 5 (del 0 al 4), por que el periodo minimo de SCLK establecido por el protocolo SPI es de 
--- 100 ns. El periodo de CLK es 20 ns. Por tanto, 5 x 20 = 100, siendo 5 el factor de division minimo para
+-- Generamos FC con PRESCALER; cada N ciclos de CLK se genera un pulso de FC de 10 ns
+-- El factor de división es 10 (del 0 al 9), por que el periodo minimo de SCLK establecido por el protocolo SPI es mayor de 
+-- 100 ns. El periodo de CLK es 20 ns. Por tanto, 10 x 20 = 200, siendo 6 el factor de division minimo para
 -- cumplir estos requisitos.
 process (CLK)
-constant N1 : integer := 5;     
+constant N1 : integer := 10;     
 begin
     if (CLK'event and CLK = '1') then
         if (CONT = N1-1) then   --Cuando N es 4 , cambia el valor de FC a 1.
-            CONT <= 0;
+            CONT <= (others => '0');
             FC <= '1';
         else
             CONT <= CONT+1;     --Mientras que N es distinto de 4, mantiene FC a 0.
@@ -122,17 +126,19 @@ process (CLK)
 begin
     if (CLK'event and CLK = '1') then
         if (FC = '1') then
-            SCLK <= NOT SCLK;
+            SCLK <= SCLK_AUX;
+            SCLK_AUX <= NOT SCLK_AUX;
         end if;      
     end if;
 end process;
 
-
-
-
-
-
-
-
+-- En este proceso generamos la señal de CE que se usa anteriormente. Esta señal estara activa cuando 
+-- SCLK y FC esten activos
+process (CLK)
+begin 
+    if (CLK'event and CLK = '1') then
+        CE <= FC AND SCLK_AUX;
+    end if;
+end process;    
+        
 end rtl;
-

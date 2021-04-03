@@ -1,7 +1,11 @@
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: E:/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto a671aaf424804c16a1741828d68b636f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot spi_controller_tb_behav xil_defaultlib.spi_controller_tb -log elaborate.log 
+Running: D:/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto a671aaf424804c16a1741828d68b636f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot spi_controller_tb_behav xil_defaultlib.spi_controller_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+ERROR: [VRFC 10-2335] case statement does not cover all choices. 'others' clause is needed [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd:85]
+ERROR: [VRFC 10-494] choice "0" should have 3 elements [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd:86]
+ERROR: [VRFC 10-494] choice "1" should have 3 elements [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd:87]
+ERROR: [VRFC 10-494] choice "10" should have 3 elements [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd:88]
+ERROR: [VRFC 10-494] choice "11" should have 3 elements [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd:89]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit spi_controller_tb in library work failed.
