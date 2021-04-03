@@ -33,7 +33,7 @@ begin
 
 -------------------------------------------  BLOQUE 1 ----------------------------------------------
 
---BLOQUE 1 obtenemos D_C a partir del bit mas significativo de DATA_SPI mediante biestable D
+-- Obtenemos D_C a partir del bit mas significativo de DATA_SPI mediante biestable D
 process (CLK, RST) 
     begin
         if (RST = '1') then
@@ -45,8 +45,7 @@ process (CLK, RST)
         end if;
 end process;
 
---BLOQUE 1 pasamos la señal DATA_SPI desde el bit 0 al bit 7 con un biestable D
---DATA_SPI_OK funciona como CLOCK ENABLE
+-- Pasamos la señal DATA_SPI desde el bit 0 al bit 7 con un biestable D. DATA_SPI_OK funciona como CLOCK ENABLE
 process (CLK, RST) 
 begin
     if (RST = '1') then
@@ -61,9 +60,9 @@ end process;
 
 -------------------------------------------  BLOQUE 2 ----------------------------------------------
 
---CLOCK ENABLE SE GENERA MEDIANTE UN BLOQUE 3 
---BLOQUE 2: En este bloque generamos un contador descendente de 7 a 0. Con ello, obtenemos los bits de control para
---          el multiplexor. La señal COUNTER_REG es unsigned para poder trabajar con balores en base 10.
+--CLOCK ENABLE SE GENERA MEDIANTE EL BLOQUE 3 
+-- En este bloque generamos un contador descendente de 7 a 0. Con ello, obtenemos los bits de control para el multiplexor. 
+-- La señal COUNTER_REG es unsigned para poder trabajar con balores en base 10.
 process (CLK, RST) 
 begin
     if (RST='1') then
@@ -79,8 +78,8 @@ begin
     end if;
 end process;
 
--- En este proceso, creamos un biestable D junto con un miltiplexor. Gracias al contador anterior, podemos
--- elegir la posicion del array correspondiente para serializarlo.
+-- En este proceso, creamos un biestable D junto con un miltiplexor. Gracias al contador anterior, podemos elegir la posicion 
+-- del array correspondiente para serializarlo.
 process (CLK, RST)
 begin
     if (RST = '1') then
@@ -102,7 +101,6 @@ end process;
 
 
 -------------------------------------------  BLOQUE 3 ----------------------------------------------
-
 
 --BLOQUE 3: Genera CE, SCLK y END_SPI, con la entrada DATA_SPI_OK. 
 
@@ -129,7 +127,8 @@ end process;
 
 -- Generamos SCLK gracias a la señal FC creada en el proceso anterior. Mediante un biestable T, que siempre esta
 -- activo, conseguimos alternar el valor de SCLK entre 1 y 0 por cada pulso de reloj en el que FC está activo.
--- Por tanto FC actuara como un CLOCK ENABLE.
+-- Por tanto FC actuara como un CLOCK ENABLE. Por otro lado, necesitamos la señal auxiliar de SCLK ya que esta es solo
+-- de salida
 process (CLK)
 begin
     if (RST = '1') then
@@ -143,8 +142,8 @@ end process;
 
 SCLK <= SCLK_AUX;
 
--- En este proceso generamos la señal de CE que se usa anteriormente. Esta señal estara activa cuando 
--- SCLK y FC esten activos
+-- En esta sentencia concurrente, generamos la señal de CE que se usa anteriormente. Esta señal estara activa cuando 
+-- SCLK y FC esten activos.
 CE <= FC AND SCLK_AUX;
    
         
