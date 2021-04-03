@@ -1,5 +1,2 @@
 Vivado Simulator 2017.4
 Time resolution is 1 ps
-Failure: fin de la simulacion
-Time: 383 ns  Iteration: 0  Process: /spi_controller_tb/line__65  File: C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller_tb.vhd
-$finish called at time : 383 ns : File "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller_tb.vhd" Line 87

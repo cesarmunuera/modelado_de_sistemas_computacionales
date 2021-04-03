@@ -26,7 +26,6 @@ architecture rtl of spi_controller is
   signal CONT            :      unsigned (6 downto 0);          --contador para bloque 3 obtener fc
  --signal FC              :      std_logic;                      --clock enable para obtener SCLK   
   signal SCLK_AUX        :      std_logic;                      --Señal auxiliar de SCLK 
-  signal SCLK_AUX_2      :      std_logic;
   --signal CE              :      std_logic;                      --Señal ClockEnable generada en el Bloque 3      
   
 begin
@@ -135,21 +134,18 @@ process (CLK)
 begin
     if (RST = '1') then
         SCLK_AUX <= '0';
-        SCLK <= '0';
     elsif (CLK'event and CLK = '1') then
         if (FC = '1') then
-            SCLK <= SCLK_AUX;
-            SCLK_AUX_2 <= SCLK_AUX;
             SCLK_AUX <= NOT SCLK_AUX;
         end if;      
     end if;
 end process;
 
+SCLK <= SCLK_AUX;
+
 -- En este proceso generamos la señal de CE que se usa anteriormente. Esta señal estara activa cuando 
 -- SCLK y FC esten activos
-process (FC,SCLK_AUX_2)
-begin 
-    CE <= FC AND SCLK_AUX_2;
-end process;    
+CE <= FC AND SCLK_AUX;
+   
         
 end rtl;
