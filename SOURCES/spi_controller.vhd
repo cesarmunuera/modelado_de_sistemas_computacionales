@@ -17,7 +17,9 @@ entity spi_controller is
          FC          : inout std_logic;
          CE          : inout std_logic;
          DATA_SPI_REG: inout std_logic_vector (7 downto 0);
-         COUNTER_REG : inout unsigned(2 downto 0));
+         COUNTER_REG : inout unsigned(2 downto 0);
+         BUSY        : inout std_logic;
+         CONT_AUX    : inout std_logic);
 end spi_controller;
 
 architecture rtl of spi_controller is
@@ -26,7 +28,9 @@ architecture rtl of spi_controller is
   signal CONT            :      unsigned (6 downto 0);          --contador para bloque 3 obtener fc
  --signal FC              :      std_logic;                      --clock enable para obtener SCLK   
   signal SCLK_AUX        :      std_logic;                      --Señal auxiliar de SCLK 
-  --signal CE              :      std_logic;                      --Señal ClockEnable generada en el Bloque 3      
+  --signal CE              :      std_logic;                      --Señal ClockEnable generada en el Bloque 3
+  --signal BUSY            :      std_logic;                      --Señal que nos indica que se esta enviando un dato  
+  --signal CONT_AUX        :      std_logic;                      -- Señal auxiliar del contador para generar BUSY
   
 begin
 
@@ -70,7 +74,7 @@ begin
     elsif (CLK='1' and CLK'event) then
         if (CE ='1') then
             if (COUNTER_REG) = 0 then
-                COUNTER_REG <= (others => '1'); 
+                COUNTER_REG <= (others => '1');
             else
                 COUNTER_REG <= COUNTER_REG - 1;
             end if;
@@ -145,6 +149,40 @@ SCLK <= SCLK_AUX;
 -- En esta sentencia concurrente, generamos la señal de CE que se usa anteriormente. Esta señal estara activa cuando 
 -- SCLK y FC esten activos.
 CE <= FC AND SCLK_AUX;
-   
+
+process(CLK)
+begin
+    if (RST = '1') then
+        CONT_AUX <= '0';
+    elsif (CLK'event and CLK = '1') then
+        if (COUNTER_REG = 0 or COUNTER_REG = 7) then
+            CONT_AUX <= '1';
+        else
+            CONT_AUX <= '0';
+        end if;
+    end if;
+end process;
+
+
+
+
+
+
+process (CLK)
+begin
+    if (RST = '1') then
+        BUSY <= '0';
+    elsif (CLK'event and CLK = '1') then
+        if (DATA_SPI_OK = '1') then
+            BUSY <= '1';
+        else
+            if((FC and SCLK_AUX) = '1') then
+                if(CONT_AUX = '1') then
+                    BUSY <= '0';
+                end if;
+            end if;
+        end if;      
+    end if;
+end process;   
         
 end rtl;

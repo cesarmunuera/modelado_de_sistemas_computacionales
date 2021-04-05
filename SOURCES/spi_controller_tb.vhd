@@ -30,6 +30,8 @@ architecture sim of spi_controller_tb is
   signal CE_i      : std_logic;
   signal DATA_SPI_REG_i: std_logic_vector (7 downto 0);
   signal COUNTER_REG_i : unsigned(2 downto 0);
+  signal BUSY_i    :std_logic;
+  signal CONT_AUX_i   :std_logic;
   
 
 begin  -- sim
@@ -48,7 +50,9 @@ begin  -- sim
       FC          => FC_i,
       CE          => CE_i,
       DATA_SPI_REG => DATA_SPI_REG_i,
-      COUNTER_REG => COUNTER_REG_i);
+      COUNTER_REG => COUNTER_REG_i,
+      BUSY        => BUSY_i,
+      CONT_AUX    => CONT_AUX_i);
 
 
   SPI_DEV : entity work.spi_device

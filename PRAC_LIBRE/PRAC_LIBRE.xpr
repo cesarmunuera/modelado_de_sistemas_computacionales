@@ -32,7 +32,7 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="53"/>
+    <Option Name="WTXSimLaunchSim" Val="67"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -120,6 +120,12 @@
       </File>
       <File Path="$PPRDIR/../SOURCES/spi_controller_tb_behav_prueba_func_CE_FC_SCLK_final.wcfg">
         <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../SOURCES/spi_controller_tb_behav_prueba_func_BUSY.wcfg">
+        <FileInfo>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -134,6 +140,7 @@
         <Option Name="XSimWcfgFile" Val="$PPRDIR/../SOURCES/spi_controller_tb_behav_apartado_1.1.wcfg"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/../SOURCES/spi_controller_tb_behav_PRUEBA_FUNC_CE_FC_SCLK.wcfg"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/../SOURCES/spi_controller_tb_behav_prueba_func_CE_FC_SCLK_final.wcfg"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/../SOURCES/spi_controller_tb_behav_prueba_func_BUSY.wcfg"/>
         <Option Name="xsim.simulate.runtime" Val="2000ns"/>
       </Config>
     </FileSet>
