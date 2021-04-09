@@ -17,7 +17,7 @@ entity spi_controller is
          FC          : inout std_logic;
          CE          : inout std_logic;
          DATA_SPI_REG: inout std_logic_vector (7 downto 0);
-         COUNTER_REG : inout unsigned(2 downto 0);
+         COUNTER_REG : inout unsigned(3 downto 0);
          BUSY        : inout std_logic;
          CONT_AUX    : inout std_logic);
 end spi_controller;
@@ -70,13 +70,13 @@ end process;
 process (CLK, RST) 
 begin
     if (RST='1') then
-        COUNTER_REG <= (others => '1');
+        COUNTER_REG <= (0    => '1', others => '0');
     elsif (CLK='1' and CLK'event) then
         if (CE ='1') then
-            if (COUNTER_REG) = 0 then
-                COUNTER_REG <= (others => '1');
+            if (COUNTER_REG) = 8 then
+                COUNTER_REG <= (0    => '1', others => '0');
             else
-                COUNTER_REG <= COUNTER_REG - 1;
+                COUNTER_REG <= COUNTER_REG + 1;
             end if;
         end if;
     end if;
@@ -90,14 +90,14 @@ begin
         SDIN <= '0';
     elsif (CLK'event and CLK = '1') then
         case COUNTER_REG is
-            when "000"  => SDIN <= DATA_SPI_REG(0);
-            when "001"  => SDIN <= DATA_SPI_REG(1);
-            when "010"  => SDIN <= DATA_SPI_REG(2);
-            when "011"  => SDIN <= DATA_SPI_REG(3);
-            when "100"  => SDIN <= DATA_SPI_REG(4);
-            when "101"  => SDIN <= DATA_SPI_REG(5);
-            when "110"  => SDIN <= DATA_SPI_REG(6);
-            when "111"  => SDIN <= DATA_SPI_REG(7);
+            when "1000"  => SDIN <= DATA_SPI_REG(0);
+            when "0111"  => SDIN <= DATA_SPI_REG(1);
+            when "0110"  => SDIN <= DATA_SPI_REG(2);
+            when "0101"  => SDIN <= DATA_SPI_REG(3);
+            when "0100"  => SDIN <= DATA_SPI_REG(4);
+            when "0011"  => SDIN <= DATA_SPI_REG(5);
+            when "0010"  => SDIN <= DATA_SPI_REG(6);
+            when "0001"  => SDIN <= DATA_SPI_REG(7);
             when others => SDIN <= DATA_SPI_REG(7);
         end case;
     end if;
@@ -150,21 +150,6 @@ SCLK <= SCLK_AUX;
 -- SCLK y FC esten activos.
 CE <= FC AND SCLK_AUX;
 
-process(CLK)
-begin
-    if (RST = '1') then
-        CONT_AUX <= '0';
-    elsif (CLK'event and CLK = '1') then
-        if (COUNTER_REG = 0 or COUNTER_REG = 7) then
-            CONT_AUX <= '1';
-        else
-            CONT_AUX <= '0';
-        end if;
-    end if;
-end process;
-
-
-
 
 
 
@@ -176,8 +161,8 @@ begin
         if (DATA_SPI_OK = '1') then
             BUSY <= '1';
         else
-            if((FC and SCLK_AUX) = '1') then
-                if(CONT_AUX = '1') then
+            if(COUNTER_REG = 8) then
+                if((FC and SCLK_AUX) = '1') then
                     BUSY <= '0';
                 end if;
             end if;

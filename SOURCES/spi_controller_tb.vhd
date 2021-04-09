@@ -29,7 +29,7 @@ architecture sim of spi_controller_tb is
   signal FC_i      : std_logic;
   signal CE_i      : std_logic;
   signal DATA_SPI_REG_i: std_logic_vector (7 downto 0);
-  signal COUNTER_REG_i : unsigned(2 downto 0);
+  signal COUNTER_REG_i : unsigned(3 downto 0);
   signal BUSY_i    :std_logic;
   signal CONT_AUX_i   :std_logic;
   
