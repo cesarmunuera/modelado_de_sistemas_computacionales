@@ -4,4 +4,16 @@ Running: E:/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto a671aaf424804c16a
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture rtl of entity xil_defaultlib.spi_controller [spi_controller_default]
+Compiling architecture sim of entity xil_defaultlib.spi_device [spi_device_default]
+Compiling architecture sim of entity xil_defaultlib.spi_controller_tb
+Built simulation snapshot spi_controller_tb_behav

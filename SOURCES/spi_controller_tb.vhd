@@ -26,6 +26,12 @@ architecture sim of spi_controller_tb is
   signal SDIN_i    : std_logic;
   signal SCLK_i    : std_logic;
   signal END_SPI_i : std_logic;
+  signal FC_i      : std_logic;
+  signal CE_i      : std_logic;
+  signal DATA_SPI_REG_i: std_logic_vector (7 downto 0);
+  signal COUNTER_REG_i : unsigned(2 downto 0);
+  signal BUSY_i    :std_logic;
+  signal CONT_AUX_i   :std_logic;
   
 
 begin  -- sim
@@ -40,7 +46,13 @@ begin  -- sim
       CS          => CS_i,
       SDIN        => SDIN_i,
       SCLK        => SCLK_i,
-      END_SPI     => END_SPI_i);
+      END_SPI     => END_SPI_i,
+      FC          => FC_i,
+      CE          => CE_i,
+      DATA_SPI_REG => DATA_SPI_REG_i,
+      COUNTER_REG => COUNTER_REG_i,
+      BUSY        => BUSY_i,
+      CONT_AUX    => CONT_AUX_i);
 
 
   SPI_DEV : entity work.spi_device
@@ -62,13 +74,14 @@ begin  -- sim
       DATA_SPI_OK_i <= '1';
       wait until CLK_i = '0';
       DATA_SPI_OK_i <= '0';
-      wait until END_SPI_i = '1';
+      --wait until END_SPI_i = '1';
+      wait for 1000 ns;
       wait for 23 ns;
     end gen_dato;
 
   begin  -- process
 
-    wait for 333 ns;
+    wait for 100 ns;
     gen_dato('0'&x"65");
     gen_dato('1'&x"80");
     gen_dato('0'&x"ff");

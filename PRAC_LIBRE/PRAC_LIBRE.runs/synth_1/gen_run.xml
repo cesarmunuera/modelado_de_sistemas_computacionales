@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1617994126">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1617994288">
   <File Type="PA-TCL" Name="test_oled.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="test_oled_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="test_oled_reports.tcl"/>

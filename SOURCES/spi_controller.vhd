@@ -13,19 +13,24 @@ entity spi_controller is
          CS          : out std_logic;
          SDIN        : out std_logic;
          SCLK        : out std_logic;
-         END_SPI     : out std_logic);
+         END_SPI     : out std_logic;
+         FC          : inout std_logic;
+         CE          : inout std_logic;
+         DATA_SPI_REG: inout std_logic_vector (7 downto 0);
+         COUNTER_REG : inout unsigned(2 downto 0);
+         BUSY        : inout std_logic;
+         CONT_AUX    : inout std_logic);
 end spi_controller;
 
 architecture rtl of spi_controller is
-  signal DATA_SPI_REG    :      std_logic_vector (7 downto 0);  --bloque 1, tiene los 8 primeros bits de data_spi 
-  signal COUNTER_REG     :      unsigned(3 downto 0);           --bloque 2, vector para elegir que bits salen a sdin
+  --signal DATA_SPI_REG    :      std_logic_vector (7 downto 0);  --bloque 1, tiene los 8 primeros bits de data_spi 
+  --signal COUNTER_REG     :      unsigned(2 downto 0);           --bloque 2, vector para elegir que bits salen a sdin
   signal CONT            :      unsigned (6 downto 0);          --contador para bloque 3 obtener fc
-  signal FC              :      std_logic;                      --clock enable para obtener SCLK   
+ --signal FC              :      std_logic;                      --clock enable para obtener SCLK   
   signal SCLK_AUX        :      std_logic;                      --Señal auxiliar de SCLK 
-  signal CE              :      std_logic;                      --Señal ClockEnable generada en el Bloque 3
-  signal BUSY            :      std_logic;                      --Señal que nos indica que se esta enviando un dato  
-  signal CONT_AUX        :      std_logic;                      -- Señal auxiliar del contador para generar BUSY
-  signal Q               :      std_logic;                      --señal q salida del primer biestable del que obtenemos la señal end_spi
+  --signal CE              :      std_logic;                      --Señal ClockEnable generada en el Bloque 3
+  --signal BUSY            :      std_logic;                      --Señal que nos indica que se esta enviando un dato  
+  --signal CONT_AUX        :      std_logic;                      -- Señal auxiliar del contador para generar BUSY
   
 begin
 
@@ -65,15 +70,13 @@ end process;
 process (CLK, RST) 
 begin
     if (RST='1') then
-        COUNTER_REG <= (others => '0');
+        COUNTER_REG <= (others => '1');
     elsif (CLK='1' and CLK'event) then
         if (CE ='1') then
-            if(BUSY = '1') then
-                if (COUNTER_REG) = 8 then
-                    COUNTER_REG <= (others => '0');
-                else
-                    COUNTER_REG <= COUNTER_REG + 1;
-                end if;
+            if (COUNTER_REG) = 0 then
+                COUNTER_REG <= (others => '1');
+            else
+                COUNTER_REG <= COUNTER_REG - 1;
             end if;
         end if;
     end if;
@@ -87,15 +90,15 @@ begin
         SDIN <= '0';
     elsif (CLK'event and CLK = '1') then
         case COUNTER_REG is
-            when "1000"  => SDIN <= DATA_SPI_REG(0);
-            when "0111"  => SDIN <= DATA_SPI_REG(1);
-            when "0110"  => SDIN <= DATA_SPI_REG(2);
-            when "0101"  => SDIN <= DATA_SPI_REG(3);
-            when "0100"  => SDIN <= DATA_SPI_REG(4);
-            when "0011"  => SDIN <= DATA_SPI_REG(5);
-            when "0010"  => SDIN <= DATA_SPI_REG(6);
-            when "0001"  => SDIN <= DATA_SPI_REG(7);
-            when others => null;
+            when "000"  => SDIN <= DATA_SPI_REG(0);
+            when "001"  => SDIN <= DATA_SPI_REG(1);
+            when "010"  => SDIN <= DATA_SPI_REG(2);
+            when "011"  => SDIN <= DATA_SPI_REG(3);
+            when "100"  => SDIN <= DATA_SPI_REG(4);
+            when "101"  => SDIN <= DATA_SPI_REG(5);
+            when "110"  => SDIN <= DATA_SPI_REG(6);
+            when "111"  => SDIN <= DATA_SPI_REG(7);
+            when others => SDIN <= DATA_SPI_REG(7);
         end case;
     end if;
 end process;
@@ -109,21 +112,19 @@ end process;
 -- El factor de división es 10 (del 0 al 9), por que el periodo minimo de SCLK establecido por el protocolo SPI es mayor de 
 -- 100 ns. El periodo de CLK es 20 ns. Por tanto, 10 x 20 = 200, siendo 6 el factor de division minimo para
 -- cumplir estos requisitos.
-process (CLK, RST)
+process (CLK)
 constant N1 : integer := 6;     
 begin
     if (RST = '1') then
         FC <= '0';
         CONT <= (others => '0');
     elsif (CLK'event and CLK = '1') then
-        if(BUSY = '1') then
-            if (CONT = N1-1) then   --Cuando N es 9 , cambia el valor de FC a 1.
-                CONT <= (others => '0');
-                FC <= '1';
-            else
-                CONT <= CONT+1;     --Mientras que N es distinto de 9, mantiene FC a 0.
-                FC <= '0';
-            end if;
+        if (CONT = N1-1) then   --Cuando N es 9 , cambia el valor de FC a 1.
+            CONT <= (others => '0');
+            FC <= '1';
+        else
+            CONT <= CONT+1;     --Mientras que N es distinto de 9, mantiene FC a 0.
+            FC <= '0';
         end if;
     end if;
 end process;
@@ -132,16 +133,14 @@ end process;
 -- activo, conseguimos alternar el valor de SCLK entre 1 y 0 por cada pulso de reloj en el que FC está activo.
 -- Por tanto FC actuara como un CLOCK ENABLE. Por otro lado, necesitamos la señal auxiliar de SCLK ya que esta es solo
 -- de salida
-process (CLK, RST)
+process (CLK)
 begin
     if (RST = '1') then
         SCLK_AUX <= '0';
     elsif (CLK'event and CLK = '1') then
-        if(BUSY='1') then
-            if (FC = '1') then
-                SCLK_AUX <= NOT SCLK_AUX;
-            end if;
-        end if;   
+        if (FC = '1') then
+            SCLK_AUX <= NOT SCLK_AUX;
+        end if;      
     end if;
 end process;
 
@@ -151,10 +150,25 @@ SCLK <= SCLK_AUX;
 -- SCLK y FC esten activos.
 CE <= FC AND SCLK_AUX;
 
+process(CLK)
+begin
+    if (RST = '1') then
+        CONT_AUX <= '0';
+    elsif (CLK'event and CLK = '1') then
+        if (COUNTER_REG = 0 or COUNTER_REG = 7) then
+            CONT_AUX <= '1';
+        else
+            CONT_AUX <= '0';
+        end if;
+    end if;
+end process;
 
 
 
-process (CLK, RST)
+
+
+
+process (CLK)
 begin
     if (RST = '1') then
         BUSY <= '0';
@@ -162,26 +176,13 @@ begin
         if (DATA_SPI_OK = '1') then
             BUSY <= '1';
         else
-            if(COUNTER_REG = 8) then
-                if((FC and SCLK_AUX) = '1') then
+            if((FC and SCLK_AUX) = '1') then
+                if(CONT_AUX = '1') then
                     BUSY <= '0';
                 end if;
             end if;
         end if;      
     end if;
-end process;
-
-process(CLK, RST)
-begin
-    if (RST = '1') then
-        END_SPI <= '0';
-        Q <= '0';
-    elsif (CLK'event and CLK = '1') then
-       Q <= not BUSY;
-       END_SPI <= Q NOR BUSY;
-    end if;
-end process;
-
-CS <= NOT BUSY;
+end process;   
         
 end rtl;
