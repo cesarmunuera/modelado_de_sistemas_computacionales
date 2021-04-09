@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity spi_controller
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity spi_controller_tb

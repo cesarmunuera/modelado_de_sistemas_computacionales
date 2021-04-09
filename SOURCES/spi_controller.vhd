@@ -13,24 +13,18 @@ entity spi_controller is
          CS          : out std_logic;
          SDIN        : out std_logic;
          SCLK        : out std_logic;
-         END_SPI     : out std_logic;
-         FC          : inout std_logic;
-         CE          : inout std_logic;
-         DATA_SPI_REG: inout std_logic_vector (7 downto 0);
-         COUNTER_REG : inout unsigned(3 downto 0);
-         BUSY        : inout std_logic;
-         CONT_AUX    : inout std_logic);
+         END_SPI     : out std_logic);
 end spi_controller;
 
 architecture rtl of spi_controller is
-  --signal DATA_SPI_REG    :      std_logic_vector (7 downto 0);  --bloque 1, tiene los 8 primeros bits de data_spi 
-  --signal COUNTER_REG     :      unsigned(2 downto 0);           --bloque 2, vector para elegir que bits salen a sdin
+  signal DATA_SPI_REG    :      std_logic_vector (7 downto 0);  --bloque 1, tiene los 8 primeros bits de data_spi 
+  signal COUNTER_REG     :      unsigned(3 downto 0);           --bloque 2, vector para elegir que bits salen a sdin
   signal CONT            :      unsigned (6 downto 0);          --contador para bloque 3 obtener fc
- --signal FC              :      std_logic;                      --clock enable para obtener SCLK   
+  signal FC              :      std_logic;                      --clock enable para obtener SCLK   
   signal SCLK_AUX        :      std_logic;                      --Señal auxiliar de SCLK 
-  --signal CE              :      std_logic;                      --Señal ClockEnable generada en el Bloque 3
-  --signal BUSY            :      std_logic;                      --Señal que nos indica que se esta enviando un dato  
-  --signal CONT_AUX        :      std_logic;                      -- Señal auxiliar del contador para generar BUSY
+  signal CE              :      std_logic;                      --Señal ClockEnable generada en el Bloque 3
+  signal BUSY            :      std_logic;                      --Señal que nos indica que se esta enviando un dato  
+  signal CONT_AUX        :      std_logic;                      -- Señal auxiliar del contador para generar BUSY
   signal Q               :      std_logic;                      --señal q salida del primer biestable del que obtenemos la señal end_spi
   
 begin
@@ -115,7 +109,7 @@ end process;
 -- El factor de división es 10 (del 0 al 9), por que el periodo minimo de SCLK establecido por el protocolo SPI es mayor de 
 -- 100 ns. El periodo de CLK es 20 ns. Por tanto, 10 x 20 = 200, siendo 6 el factor de division minimo para
 -- cumplir estos requisitos.
-process (CLK)
+process (CLK, RST)
 constant N1 : integer := 6;     
 begin
     if (RST = '1') then
@@ -138,7 +132,7 @@ end process;
 -- activo, conseguimos alternar el valor de SCLK entre 1 y 0 por cada pulso de reloj en el que FC está activo.
 -- Por tanto FC actuara como un CLOCK ENABLE. Por otro lado, necesitamos la señal auxiliar de SCLK ya que esta es solo
 -- de salida
-process (CLK)
+process (CLK, RST)
 begin
     if (RST = '1') then
         SCLK_AUX <= '0';
@@ -160,7 +154,7 @@ CE <= FC AND SCLK_AUX;
 
 
 
-process (CLK)
+process (CLK, RST)
 begin
     if (RST = '1') then
         BUSY <= '0';
@@ -186,6 +180,8 @@ begin
        Q <= not BUSY;
        END_SPI <= Q NOR BUSY;
     end if;
-end process;   
+end process;
+
+CS <= NOT BUSY;
         
 end rtl;
