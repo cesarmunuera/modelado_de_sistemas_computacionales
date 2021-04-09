@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim/xsim.dir/spi_controller_tb_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Fri Apr  9 12:55:34 2021" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Fri Apr  9 19:11:32 2021" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2017.4 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2086221" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "572165e1-4c0b-4f51-97a0-d538bed6c32b" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "a671aaf424804c16a1741828d68b636f" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "78" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "94" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz" -context "user_environment"
@@ -24,9 +24,9 @@ webtalk_add_data -client project -key system_ram -value "25.000 GB" -context "us
 webtalk_register_client -client xsim
 webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
-webtalk_add_data -client xsim -key runtime -value "2500 ns" -context "xsim\\usage"
+webtalk_add_data -client xsim -key runtime -value "3500 ns" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "1" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "0.06_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "7496_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 187404901 -regid "" -xml C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim/xsim.dir/spi_controller_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim/xsim.dir/spi_controller_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim/xsim.dir/spi_controller_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "0.03_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "7488_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 2846235585 -regid "" -xml C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim/xsim.dir/spi_controller_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim/xsim.dir/spi_controller_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim/xsim.dir/spi_controller_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

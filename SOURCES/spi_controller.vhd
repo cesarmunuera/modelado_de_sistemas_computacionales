@@ -31,6 +31,7 @@ architecture rtl of spi_controller is
   --signal CE              :      std_logic;                      --Señal ClockEnable generada en el Bloque 3
   --signal BUSY            :      std_logic;                      --Señal que nos indica que se esta enviando un dato  
   --signal CONT_AUX        :      std_logic;                      -- Señal auxiliar del contador para generar BUSY
+  signal Q               :      std_logic;                      --señal q salida del primer biestable del que obtenemos la señal end_spi
   
 begin
 
@@ -70,13 +71,15 @@ end process;
 process (CLK, RST) 
 begin
     if (RST='1') then
-        COUNTER_REG <= (0    => '1', others => '0');
+        COUNTER_REG <= (others => '0');
     elsif (CLK='1' and CLK'event) then
         if (CE ='1') then
-            if (COUNTER_REG) = 8 then
-                COUNTER_REG <= (0    => '1', others => '0');
-            else
-                COUNTER_REG <= COUNTER_REG + 1;
+            if(BUSY = '1') then
+                if (COUNTER_REG) = 8 then
+                    COUNTER_REG <= (others => '0');
+                else
+                    COUNTER_REG <= COUNTER_REG + 1;
+                end if;
             end if;
         end if;
     end if;
@@ -98,7 +101,7 @@ begin
             when "0011"  => SDIN <= DATA_SPI_REG(5);
             when "0010"  => SDIN <= DATA_SPI_REG(6);
             when "0001"  => SDIN <= DATA_SPI_REG(7);
-            when others => SDIN <= DATA_SPI_REG(7);
+            when others => null;
         end case;
     end if;
 end process;
@@ -119,12 +122,14 @@ begin
         FC <= '0';
         CONT <= (others => '0');
     elsif (CLK'event and CLK = '1') then
-        if (CONT = N1-1) then   --Cuando N es 9 , cambia el valor de FC a 1.
-            CONT <= (others => '0');
-            FC <= '1';
-        else
-            CONT <= CONT+1;     --Mientras que N es distinto de 9, mantiene FC a 0.
-            FC <= '0';
+        if(BUSY = '1') then
+            if (CONT = N1-1) then   --Cuando N es 9 , cambia el valor de FC a 1.
+                CONT <= (others => '0');
+                FC <= '1';
+            else
+                CONT <= CONT+1;     --Mientras que N es distinto de 9, mantiene FC a 0.
+                FC <= '0';
+            end if;
         end if;
     end if;
 end process;
@@ -138,9 +143,11 @@ begin
     if (RST = '1') then
         SCLK_AUX <= '0';
     elsif (CLK'event and CLK = '1') then
-        if (FC = '1') then
-            SCLK_AUX <= NOT SCLK_AUX;
-        end if;      
+        if(BUSY='1') then
+            if (FC = '1') then
+                SCLK_AUX <= NOT SCLK_AUX;
+            end if;
+        end if;   
     end if;
 end process;
 
@@ -167,6 +174,17 @@ begin
                 end if;
             end if;
         end if;      
+    end if;
+end process;
+
+process(CLK, RST)
+begin
+    if (RST = '1') then
+        END_SPI <= '0';
+        Q <= '0';
+    elsif (CLK'event and CLK = '1') then
+       Q <= not BUSY;
+       END_SPI <= Q NOR BUSY;
     end if;
 end process;   
         

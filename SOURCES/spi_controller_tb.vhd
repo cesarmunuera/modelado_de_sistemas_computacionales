@@ -81,7 +81,7 @@ begin  -- sim
 
   begin  -- process
 
-    wait for 100 ns;
+    wait for 333 ns;
     gen_dato('0'&x"65");
     gen_dato('1'&x"80");
     gen_dato('0'&x"ff");
