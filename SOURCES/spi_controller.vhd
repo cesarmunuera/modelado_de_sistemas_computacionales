@@ -153,7 +153,8 @@ CE <= FC AND SCLK_AUX;
 
 
 
-
+--Generamos la señal busy, poniendola a 1 cuando DATA_SPI_OK = 1, y poniendola a 0 cuando el contador llega a 8 y cuando
+--FC y SCLK_AUX esten a 1. Esta señal busy, se incorpora a el contador, el prescaler  y al biestable que genera SCLK
 process (CLK, RST)
 begin
     if (RST = '1') then
@@ -171,6 +172,8 @@ begin
     end if;
 end process;
 
+--Generamos la señal END_SPI, negando primero la señal busy y almacenandola en Q, finalmente obtenemos END_SPI con una puerta NOR,
+--cuyas entradas son Q y BUSY
 process(CLK, RST)
 begin
     if (RST = '1') then
@@ -182,6 +185,7 @@ begin
     end if;
 end process;
 
+--Finalmente generamos CS negando BUSY
 CS <= NOT BUSY;
         
 end rtl;
