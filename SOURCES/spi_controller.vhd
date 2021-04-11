@@ -130,7 +130,7 @@ end process;
 -- Generamos SCLK gracias a la señal FC creada en el proceso anterior. Mediante un biestable T, que siempre esta
 -- activo, conseguimos alternar el valor de SCLK entre 1 y 0 por cada pulso de reloj en el que FC está activo.
 -- Por tanto FC actuara como un CLOCK ENABLE. Por otro lado, necesitamos la señal auxiliar de SCLK ya que esta es solo
--- de salida
+-- de salida 
 process (CLK, RST)
 begin
     if (RST = '1') then

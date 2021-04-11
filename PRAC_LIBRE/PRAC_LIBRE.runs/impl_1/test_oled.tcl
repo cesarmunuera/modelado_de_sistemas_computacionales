@@ -66,7 +66,7 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   open_checkpoint test_oled_routed.dcp
-  set_property webtalk.parent_dir {C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.cache/wt} [current_project]
+  set_property webtalk.parent_dir C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.cache/wt [current_project]
   catch { write_mem_info -force test_oled.mmi }
   write_bitstream -force test_oled.bit 
   catch {write_debug_probes -quiet -force test_oled}

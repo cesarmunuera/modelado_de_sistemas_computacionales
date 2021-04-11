@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Sun Apr 11 13:22:48 2021
-// Host        : Torre running 64-bit major release  (build 9200)
-// Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file {C:/Users/cesar/Desktop/Uni/Programas
-//               varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/impl/timing/xsim/spi_controller_tb_time_impl.v}
+// Date        : Sun Apr 11 13:48:12 2021
+// Host        : LAPTOP-NU8BRVH7 running 64-bit major release  (build 9200)
+// Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file
+//               C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/impl/timing/xsim/spi_controller_tb_time_impl.v
 // Design      : test_oled
 // Purpose     : This verilog netlist is a timing simulation representation of the design and should not be modified or
 //               synthesized. Please ensure that this netlist is used with the corresponding SDF file.
