@@ -62,7 +62,8 @@ begin  -- sim
       DATA_SPI_OK_i <= '1';
       wait until CLK_i = '0';
       DATA_SPI_OK_i <= '0';
-      wait until END_SPI_i = '1';
+      --wait until END_SPI_i = '1';
+      wait for 1100 ns;
       wait for 23 ns;
     end gen_dato;
 

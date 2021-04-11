@@ -59,7 +59,7 @@ end process;
 -------------------------------------------  BLOQUE 2 ----------------------------------------------
 
 --CLOCK ENABLE SE GENERA MEDIANTE EL BLOQUE 3 
--- En este bloque generamos un contador descendente de 7 a 0. Con ello, obtenemos los bits de control para el multiplexor. 
+-- En este bloque generamos un contador ascendente de 0 a 8. Con ello, obtenemos los bits de control para el multiplexor. 
 -- La señal COUNTER_REG es unsigned para poder trabajar con balores en base 10.
 process (CLK, RST) 
 begin
@@ -105,8 +105,8 @@ end process;
 --BLOQUE 3: Genera CE, SCLK y END_SPI, con la entrada DATA_SPI_OK. 
 
 -- Generamos FC con PRESCALER; cada N ciclos de CLK se genera un pulso de FC de 10 ns
--- El factor de división es 10 (del 0 al 9), por que el periodo minimo de SCLK establecido por el protocolo SPI es mayor de 
--- 100 ns. El periodo de CLK es 20 ns. Por tanto, 10 x 20 = 200, siendo 6 el factor de division minimo para
+-- El factor de división es 6 (del 0 al 5), por que el periodo minimo de SCLK establecido por el protocolo SPI es mayor de 
+-- 100 ns. El periodo de CLK es 20 ns. Por tanto, 6 x 20 = 120, siendo 6 el factor de division minimo para
 -- cumplir estos requisitos.
 process (CLK, RST)
 constant N1 : integer := 6;     
@@ -116,11 +116,11 @@ begin
         CONT <= (others => '0');
     elsif (CLK'event and CLK = '1') then
         if(BUSY = '1') then
-            if (CONT = N1-1) then   --Cuando N es 9 , cambia el valor de FC a 1.
+            if (CONT = N1-1) then   --Cuando N es 5 , cambia el valor de FC a 1.
                 CONT <= (others => '0');
                 FC <= '1';
             else
-                CONT <= CONT+1;     --Mientras que N es distinto de 9, mantiene FC a 0.
+                CONT <= CONT+1;     --Mientras que N es distinto de 5, mantiene FC a 0.
                 FC <= '0';
             end if;
         end if;
