@@ -23,8 +23,7 @@ architecture rtl of spi_controller is
   signal FC              :      std_logic;                      --clock enable para obtener SCLK   
   signal SCLK_AUX        :      std_logic;                      --Señal auxiliar de SCLK 
   signal CE              :      std_logic;                      --Señal ClockEnable generada en el Bloque 3
-  signal BUSY            :      std_logic;                      --Señal que nos indica que se esta enviando un dato  
-  signal CONT_AUX        :      std_logic;                      -- Señal auxiliar del contador para generar BUSY
+  signal BUSY            :      std_logic;                      --Señal que nos indica que se esta enviando un dato
   signal Q               :      std_logic;                      --señal q salida del primer biestable del que obtenemos la señal end_spi
   
 begin
