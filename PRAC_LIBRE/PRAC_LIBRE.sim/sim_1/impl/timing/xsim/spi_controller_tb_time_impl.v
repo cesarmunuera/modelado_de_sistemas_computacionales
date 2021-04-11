@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Sun Apr 11 13:48:12 2021
+// Date        : Sun Apr 11 21:01:51 2021
 // Host        : LAPTOP-NU8BRVH7 running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file
 //               C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/impl/timing/xsim/spi_controller_tb_time_impl.v
@@ -2725,7 +2725,7 @@ module spi_controller
         .Q(Q_0));
   (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT3 #(
-    .INIT(8'h78)) 
+    .INIT(8'h7B)) 
     SCLK_AUX_i_1
        (.I0(FC_reg_n_0),
         .I1(BUSY),

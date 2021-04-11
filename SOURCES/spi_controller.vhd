@@ -140,6 +140,8 @@ begin
             if (FC = '1') then
                 SCLK_AUX <= NOT SCLK_AUX;
             end if;
+        else
+            SCLK_AUX <= '1';
         end if;   
     end if;
 end process;

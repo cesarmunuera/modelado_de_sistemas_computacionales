@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun Apr 11 13:48:32 2021
-# Process ID: 18436
+# Start of session at: Sun Apr 11 19:05:58 2021
+# Process ID: 7604
 # Current directory: C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/impl_1
 # Command line: vivado.exe -log test_oled.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source test_oled.tcl -notrace
 # Log file: C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/impl_1/test_oled.vdi
@@ -14,25 +14,25 @@ Command: open_checkpoint test_oled_routed.dcp
 
 Starting open_checkpoint Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.096 . Memory (MB): peak = 227.359 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 227.313 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2017.4
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/impl_1/.Xil/Vivado-18436-LAPTOP-NU8BRVH7/dcp1/test_oled.xdc]
-Finished Parsing XDC File [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/impl_1/.Xil/Vivado-18436-LAPTOP-NU8BRVH7/dcp1/test_oled.xdc]
+Parsing XDC File [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/impl_1/.Xil/Vivado-7604-LAPTOP-NU8BRVH7/dcp1/test_oled.xdc]
+Finished Parsing XDC File [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/impl_1/.Xil/Vivado-7604-LAPTOP-NU8BRVH7/dcp1/test_oled.xdc]
 Reading XDEF placement.
 Reading placer database...
 Reading XDEF routing.
-Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.111 . Memory (MB): peak = 540.480 ; gain = 0.000
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 539.836 ; gain = 0.000
 Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 540.480 ; gain = 0.000
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 539.836 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Project 1-604] Checkpoint was created with Vivado v2017.4 (64-bit) build 2086221
-open_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 540.480 ; gain = 314.680
+open_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 539.836 ; gain = 314.734
 Command: write_bitstream -force test_oled.bit
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -76,5 +76,5 @@ INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK 
 INFO: [Common 17-83] Releasing license: Implementation
 19 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 996.465 ; gain = 455.984
-INFO: [Common 17-206] Exiting Vivado at Sun Apr 11 13:49:25 2021...
+write_bitstream: Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 995.152 ; gain = 455.316
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 11 19:06:37 2021...

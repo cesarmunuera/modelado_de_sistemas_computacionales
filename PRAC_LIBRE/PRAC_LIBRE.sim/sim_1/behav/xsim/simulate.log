@@ -3,3 +3,9 @@ Time resolution is 1 ps
 Failure: fin de la simulacion
 Time: 8313 ns  Iteration: 0  Process: /spi_controller_tb/line__57  File: C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller_tb.vhd
 $finish called at time : 8313 ns : File "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller_tb.vhd" Line 80
+Failure: fin de la simulacion
+Time: 8313 ns  Iteration: 0  Process: /spi_controller_tb/line__57  File: C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller_tb.vhd
+$finish called at time : 8313 ns : File "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller_tb.vhd" Line 80
+Failure: fin de la simulacion
+Time: 16623 ns  Iteration: 0  Process: /spi_controller_tb/line__57  File: C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller_tb.vhd
+$finish called at time : 16623 ns : File "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller_tb.vhd" Line 80
