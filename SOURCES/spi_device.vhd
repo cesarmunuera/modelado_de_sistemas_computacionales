@@ -32,6 +32,8 @@ begin
         aux                 <= '1';
         reg_aux(couter_bit) <= SDIN;
         couter_bit          <= couter_bit-1;
+      elsif couter_bit <0 then
+        report "ERROR EN LA GENERACION DE SCLK" severity failure;
       end if;
     end if;
   end process;

@@ -1,0 +1,11 @@
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+Failure: ERROR EN LA GENERACION DE SCLK
+Time: 1375 ns  Iteration: 2  Process: /spi_controller_tb/SPI_DEV/line__24  File: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_device.vhd
+$finish called at time : 1375 ns : File "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_device.vhd" Line 36
+Failure: ERROR EN LA GENERACION DE SCLK
+Time: 2505 ns  Iteration: 2  Process: /spi_controller_tb/SPI_DEV/line__24  File: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_device.vhd
+$finish called at time : 2505 ns : File "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_device.vhd" Line 36
+Failure: ERROR EN LA GENERACION DE SCLK
+Time: 3645 ns  Iteration: 2  Process: /spi_controller_tb/SPI_DEV/line__24  File: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_device.vhd
+$finish called at time : 3645 ns : File "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_device.vhd" Line 36
