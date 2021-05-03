@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../SOURCES/debounce_module.vhd" \
+"../../../../../SOURCES/KYPD_controller.vhd" \
+"../../../../../SOURCES/teclado.vhdl" \
+"../../../../../SOURCES/KYPD_controller_tb.vhd" \
+
+# Do not sort compile order
+nosort

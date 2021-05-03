@@ -23,6 +23,7 @@ architecture behavior of KYPD_controller is
   signal    KEY_CODE_AUX : std_logic_vector (3 downto 0);--Bloque 3: Señal que lleva el valor de la tecla pulsada.
   signal    COL_ROW      : std_logic_vector (7 downto 0);--Bloque 3: Señal que concatena Q_ROW y COL.
   signal    DF           : std_logic;                    --Bloque 4: Detector de flanco.
+  signal    Q            : std_logic;                    --Bloque 4: Salida del biestable D del detector de flanco.
   
 
 begin
@@ -43,18 +44,18 @@ begin
 
 -- En este proceso se modela el prescaler 1, para generar el clock enable del contador (CE_COL).
 process (CLK, RST)
-constant N1 : integer := 7;     -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+constant N1 : integer := 3500000;     -- 35
 begin
     if (RST = '1') then
         CE_COL <= '0';
         CONT <= (others => '0');
     elsif (CLK'event and CLK = '1') then
         if(CE_ROW = '1') then
-            if (CONT = N1-1) then   --Cuando N es 6 , cambia el valor de CE_COL a 1.
+            if (CONT = N1-1) then   --Cuando N es 2499999 , cambia el valor de CE_COL a 1.
                 CONT <= (others => '0');
                 CE_COL <= '1';
             else
-                CONT <= CONT+1;     --Mientras que N es distinto de 6, mantiene CE_COL a 0.
+                CONT <= CONT+1;     --Mientras que N es distinto 2499999, mantiene CE_COL a 0.
                 CE_COL <= '0';
             end if;
         end if;
@@ -63,17 +64,17 @@ end process;
 
 -- En este proceso se modela el prescaler 2, para generar el clock enable de las filas (CE_ROW).
 process (CLK, RST)
-constant N2 : integer := 350000;     -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+constant N2 : integer := 700000;     -- 7ms
 begin
     if (RST = '1') then
         CE_ROW <= '0';
         CONT2 <= (others => '0');
     elsif (CLK'event and CLK = '1') then
-        if (CONT2 = N2-1) then   --Cuando N es 349999 , cambia el valor de CE_ROW a 1.
+        if (CONT2 = N2-1) then   --Cuando N es 699999 , cambia el valor de CE_ROW a 1.
             CONT2 <= (others => '0');
             CE_ROW <= '1';
         else
-            CONT2 <= CONT2+1;     --Mientras que N es distinto de 349999, mantiene CE_ROW a 0.
+            CONT2 <= CONT2+1;     --Mientras que N es distinto de 699999, mantiene CE_ROW a 0.
             CE_ROW <= '0';
         end if;
     end if;
@@ -120,6 +121,7 @@ begin
 end process;
 COL <= COL_AUX;             -- Asignamos el valor de forma concurrente.
 
+
 ------------------------------------------------------------------------------------------------------------------------  
 -- Bloque 3. En este bloque creamos el codificador a partir de las señales Q_ROW y COL. La salida será el KY_CODE. 
 
@@ -131,35 +133,64 @@ begin
         --KEY_CODE_AUX <= (others => '0');
     elsif (CLK'event and CLK = '1') then
         case COL_ROW is
-            when "11100111"  => COL_AUX <= "0000"; -- 0
-            when "11101110"  => COL_AUX <= "0001"; -- 1
-            when "10111110"  => COL_AUX <= "0010"; -- 2
-            when "11011110"  => COL_AUX <= "0011"; -- 3
-            when "11101101"  => COL_AUX <= "0100"; -- 4
-            when "11011101"  => COL_AUX <= "0101"; -- 5
-            when "10111101"  => COL_AUX <= "0110"; -- 6
-            when "11101011"  => COL_AUX <= "0111"; -- 7
-            when "11011011"  => COL_AUX <= "1000"; -- 8
-            when "10111011"  => COL_AUX <= "1001"; -- 9
-            when "01111110"  => COL_AUX <= "1010"; -- A
-            when "01111101"  => COL_AUX <= "1011"; -- B
-            when "01111011"  => COL_AUX <= "1100"; -- C
-            when "01110111"  => COL_AUX <= "1101"; -- D
-            when "10110111"  => COL_AUX <= "1110"; -- E
-            when "11010111"  => COL_AUX <= "1111"; -- F
+            when "11100111"  => KEY_CODE_AUX <= "0000"; -- 0
+            when "11101110"  => KEY_CODE_AUX <= "0001"; -- 1
+            when "10111110"  => KEY_CODE_AUX <= "0010"; -- 2
+            when "11011110"  => KEY_CODE_AUX <= "0011"; -- 3
+            when "11101101"  => KEY_CODE_AUX <= "0100"; -- 4
+            when "11011101"  => KEY_CODE_AUX <= "0101"; -- 5
+            when "10111101"  => KEY_CODE_AUX <= "0110"; -- 6
+            when "11101011"  => KEY_CODE_AUX <= "0111"; -- 7
+            when "11011011"  => KEY_CODE_AUX <= "1000"; -- 8
+            when "10111011"  => KEY_CODE_AUX <= "1001"; -- 9
+            when "01111110"  => KEY_CODE_AUX <= "1010"; -- A
+            when "01111101"  => KEY_CODE_AUX <= "1011"; -- B
+            when "01111011"  => KEY_CODE_AUX <= "1100"; -- C
+            when "01110111"  => KEY_CODE_AUX <= "1101"; -- D
+            when "10110111"  => KEY_CODE_AUX <= "1110"; -- E
+            when "11010111"  => KEY_CODE_AUX <= "1111"; -- F
             when others => null;
         end case;
     end if;
 end process;
 
+-- Asignamos a la señal final (KEY_CODE) el valor de la señal auxiliar.
+process(CLK, RST)
+begin
+    if (RST = '1') then
+        --KEY_CODE <= (others => '0');
+    elsif (CLK'event and CLK = '1') then
+        if (DF = '1') then
+            KEY_CODE <= KEY_CODE_AUX;
+        end if;
+    end if;
+end process;
 
 
 ------------------------------------------------------------------------------------------------------------------------  
 -- Bloque 4. En este bloque creamos el detector de flanco DF
 
+-- Detector de flanco.
+process(CLK, RST)
+begin
+    if (RST = '1') then
+        DF <= '0';
+        Q <= '0';
+    elsif (CLK'event and CLK = '1') then
+       Q <= not ROW_OK;
+       DF <= Q NOR ROW_OK;
+    end if;
+end process;
 
-
-
+-- Generamos la salida KEY_CODE_OK a partir del detector de flancos.
+process(CLK, RST)
+begin
+    if (RST = '1') then
+        --KEY_CODE_OK <= '0';
+    elsif (CLK'event and CLK = '1') then
+        KEY_CODE_OK <= DF;
+    end if;
+end process;
 
 
  
