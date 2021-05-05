@@ -13,6 +13,6 @@ Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling architecture rtl of entity xil_defaultlib.debounce_module [debounce_module_default]
 Compiling architecture behavior of entity xil_defaultlib.KYPD_controller [kypd_controller_default]
-Compiling architecture sim of entity xil_defaultlib.teclado [\teclado(rebtime=7000000000,m=4)...]
+Compiling architecture sim of entity xil_defaultlib.teclado [\teclado(rebtime=700000,m=4)\]
 Compiling architecture sim of entity xil_defaultlib.kypd_controller_tb
 Built simulation snapshot KYPD_controller_tb_behav

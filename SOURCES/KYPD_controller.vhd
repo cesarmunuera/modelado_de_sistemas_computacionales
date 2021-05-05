@@ -14,9 +14,9 @@ end KYPD_controller;
 architecture behavior of KYPD_controller is
   signal    Q_ROW        : std_logic_vector(3 downto 0);
   signal    CE_COL       : std_logic;                    --Bloque 1: Salida del primer prescaler. Clock enable de las columnas
-  signal    CONT         : unsigned (6 downto 0);        --Bloque 1: Contador  obtener CE_COL.
+  signal    CONT         : unsigned (9 downto 0);        --Bloque 1: Contador  obtener CE_COL.
   signal    CE_ROW       : std_logic;                    --Bloque 1: Salida del primer prescaler. Clock enable de las filas.
-  signal    CONT2        : unsigned (6 downto 0);        --Bloque 1: Contador  obtener CE_ROW.
+  signal    CONT2        : unsigned (9 downto 0);        --Bloque 1: Contador  obtener CE_ROW.
   signal    COL_AUX      : std_logic_vector(3 downto 0); --Bloque 1: Es la misma señal que COL.
   signal    ROW_OK       : std_logic;                    --Bloque 2: Un "CE" para Colum Control.
   signal    COL_CNT      : unsigned (1 downto 0);        --Bloque 2: Señal de la columna, salida del contador.
@@ -44,18 +44,19 @@ begin
 
 -- En este proceso se modela el prescaler 1, para generar el clock enable del contador (CE_COL).
 process (CLK, RST)
-constant N1 : integer := 3500000;     -- 35
+--constant N1 : integer := 3500000;     -- 35 ms
+constant N1 : integer := 350;        -- 35 ms, pero con factor de escalada x10^-4 
 begin
     if (RST = '1') then
         CE_COL <= '0';
         CONT <= (others => '0');
     elsif (CLK'event and CLK = '1') then
         if(CE_ROW = '1') then
-            if (CONT = N1-1) then   --Cuando N es 2499999 , cambia el valor de CE_COL a 1.
+            if (CONT = N1-1) then   --Cuando N es 34999999 , cambia el valor de CE_COL a 1.
                 CONT <= (others => '0');
                 CE_COL <= '1';
             else
-                CONT <= CONT+1;     --Mientras que N es distinto 2499999, mantiene CE_COL a 0.
+                CONT <= CONT+1;     --Mientras que N es distinto 34999999, mantiene CE_COL a 0.
                 CE_COL <= '0';
             end if;
         end if;
@@ -64,7 +65,8 @@ end process;
 
 -- En este proceso se modela el prescaler 2, para generar el clock enable de las filas (CE_ROW).
 process (CLK, RST)
-constant N2 : integer := 700000;     -- 7ms
+--constant N2 : integer := 700000;     -- 7ms
+constant N2 : integer := 70;     -- 7ms, pero con factor de escalada x10^-4 
 begin
     if (RST = '1') then
         CE_ROW <= '0';
@@ -74,7 +76,7 @@ begin
             CONT2 <= (others => '0');
             CE_ROW <= '1';
         else
-            CONT2 <= CONT2+1;     --Mientras que N es distinto de 699999, mantiene CE_ROW a 0.
+            CONT2 <= CONT2 +1;     --Mientras que N es distinto de 699999, mantiene CE_ROW a 0.
             CE_ROW <= '0';
         end if;
     end if;
@@ -84,7 +86,7 @@ end process;
 ------------------------------------------------------------------------------------------------------------------------  
 -- Bloque 2. En este bloque se realiza un contador y un decoficador, para generar COLUM_CODE. Recibe la señal CE_COL.   
    
-ROW_OK  <= '1' when Q_ROW = "1111" else '0';   --Se activa cuando no hay ninguna tecla a nivel bajo, por tanto, pulsada.
+ROW_OK  <= '1' when Q_ROW = "1111" else '0';   --Se activa cuando no hay ninguna tecla a nivel bajo.
 
 --Creamos un contador, que será el que elija la posición del 0 en el decodificador. Por eso es del 0 al 3.
 process (CLK, RST) 
@@ -105,19 +107,15 @@ begin
 end process;
  
 -- Creamos el decodificador, a partir de la señal del contador COL_CNT.  
-process (CLK, RST)
+process (COL_CNT)
 begin
-    if (RST = '1') then
-        COL_AUX <= (others => '0');
-    elsif (CLK'event and CLK = '1') then
-        case COL_CNT is
-            when "00"  => COL_AUX <= "1110";
-            when "01"  => COL_AUX <= "1101";
-            when "10"  => COL_AUX <= "1011";
-            when "11"  => COL_AUX <= "0111";
-            when others => null;
-        end case;
-    end if;
+    case COL_CNT is
+        when "00"  => COL_AUX <= "1110";
+        when "01"  => COL_AUX <= "1101";
+        when "10"  => COL_AUX <= "1011";
+        when "11"  => COL_AUX <= "0111";
+        when others => null;
+    end case;
 end process;
 COL <= COL_AUX;             -- Asignamos el valor de forma concurrente.
 
@@ -125,40 +123,37 @@ COL <= COL_AUX;             -- Asignamos el valor de forma concurrente.
 ------------------------------------------------------------------------------------------------------------------------  
 -- Bloque 3. En este bloque creamos el codificador a partir de las señales Q_ROW y COL. La salida será el KY_CODE. 
 
-COL_ROW <= (Q_ROW & COL_AUX);
+COL_ROW <= (COL_AUX & Q_ROW);
 
-process (CLK, RST)
+-- Codificador
+process (COL_ROW)
 begin
-    if (RST = '1') then
-        --KEY_CODE_AUX <= (others => '0');
-    elsif (CLK'event and CLK = '1') then
-        case COL_ROW is
-            when "11100111"  => KEY_CODE_AUX <= "0000"; -- 0
-            when "11101110"  => KEY_CODE_AUX <= "0001"; -- 1
-            when "10111110"  => KEY_CODE_AUX <= "0010"; -- 2
-            when "11011110"  => KEY_CODE_AUX <= "0011"; -- 3
-            when "11101101"  => KEY_CODE_AUX <= "0100"; -- 4
-            when "11011101"  => KEY_CODE_AUX <= "0101"; -- 5
-            when "10111101"  => KEY_CODE_AUX <= "0110"; -- 6
-            when "11101011"  => KEY_CODE_AUX <= "0111"; -- 7
-            when "11011011"  => KEY_CODE_AUX <= "1000"; -- 8
-            when "10111011"  => KEY_CODE_AUX <= "1001"; -- 9
-            when "01111110"  => KEY_CODE_AUX <= "1010"; -- A
-            when "01111101"  => KEY_CODE_AUX <= "1011"; -- B
-            when "01111011"  => KEY_CODE_AUX <= "1100"; -- C
-            when "01110111"  => KEY_CODE_AUX <= "1101"; -- D
-            when "10110111"  => KEY_CODE_AUX <= "1110"; -- E
-            when "11010111"  => KEY_CODE_AUX <= "1111"; -- F
-            when others => null;
-        end case;
-    end if;
+    case COL_ROW is
+        when "11100111"  => KEY_CODE_AUX <= "0000"; -- 0
+        when "11101110"  => KEY_CODE_AUX <= "0001"; -- 1
+        when "11011110"  => KEY_CODE_AUX <= "0010"; -- 2
+        when "10111110"  => KEY_CODE_AUX <= "0011"; -- 3
+        when "11101101"  => KEY_CODE_AUX <= "0100"; -- 4
+        when "11011101"  => KEY_CODE_AUX <= "0101"; -- 5
+        when "10111101"  => KEY_CODE_AUX <= "0110"; -- 6
+        when "11101011"  => KEY_CODE_AUX <= "0111"; -- 7
+        when "11011011"  => KEY_CODE_AUX <= "1000"; -- 8
+        when "10111011"  => KEY_CODE_AUX <= "1001"; -- 9
+        when "01111110"  => KEY_CODE_AUX <= "1010"; -- A
+        when "01111101"  => KEY_CODE_AUX <= "1011"; -- B
+        when "01111011"  => KEY_CODE_AUX <= "1100"; -- C
+        when "01110111"  => KEY_CODE_AUX <= "1101"; -- D
+        when "10110111"  => KEY_CODE_AUX <= "1110"; -- E
+        when "11010111"  => KEY_CODE_AUX <= "1111"; -- F
+        when others => null;
+    end case;
 end process;
 
 -- Asignamos a la señal final (KEY_CODE) el valor de la señal auxiliar.
 process(CLK, RST)
 begin
     if (RST = '1') then
-        --KEY_CODE <= (others => '0');
+        KEY_CODE <= (others => '0');
     elsif (CLK'event and CLK = '1') then
         if (DF = '1') then
             KEY_CODE <= KEY_CODE_AUX;

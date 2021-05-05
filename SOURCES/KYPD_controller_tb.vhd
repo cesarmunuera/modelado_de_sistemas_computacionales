@@ -19,10 +19,10 @@ architecture sim of KYPD_controller_tb is
   signal COL_i         : std_logic_vector(3 downto 0);
   signal KEY_CODE_OK_i : std_logic;
   signal KEY_CODE_i    : std_logic_vector(3 downto 0);
-  
-  constant REBTIME  : time    := 7 ms;--Duración de un rebote
-  constant M        : integer := 4;-- Nº de rebotes
-  constant PUSHTIME : time    := 150 ms;-- Duración de una pulsación -> Pushtime>4T1 (4T1 = 140)
+  -- Factor de escalada es x10^-4
+  constant REBTIME  : time    := 700 ns;       --Duración de un rebote
+  constant M        : integer := 4;           -- Nº de rebotes
+  constant PUSHTIME : time    := 17500 ns;    -- Duración de una pulsación -> Pushtime>4T1 -> 5T1 = 175ms
   signal   TECLA_i  : std_logic_vector(3 downto 0);
 begin  --  sim
 

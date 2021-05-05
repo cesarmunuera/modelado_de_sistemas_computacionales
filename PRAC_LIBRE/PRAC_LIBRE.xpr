@@ -32,7 +32,7 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="135"/>
+    <Option Name="WTXSimLaunchSim" Val="156"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -170,6 +170,11 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../SOURCES/KYPD_controller_tb_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="KYPD_controller_tb"/>
@@ -190,6 +195,7 @@
         <Option Name="XSimWcfgFile" Val="$PPRDIR/../SOURCES/spi_controller_tb_time_impl_BLOQUE2.wcfg"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/../SOURCES/spi_controller_tb_behav_BLOQUE3.wcfg"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/../SOURCES/spi_controller_tb_time_impl_BLOQUE3.wcfg"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/../SOURCES/KYPD_controller_tb_behav.wcfg"/>
         <Option Name="Incremental" Val="0"/>
         <Option Name="xsim.simulate.runtime" Val="2000ns"/>
       </Config>

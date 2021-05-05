@@ -1,2 +1,14 @@
 Vivado Simulator 2017.4
 Time resolution is 1 ps
+Failure: FIN CONTROLADO DE LA SIMULACION
+Time: 428750 ns  Iteration: 0  Process: /KYPD_controller_tb/line__51  File: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd
+$finish called at time : 428750 ns : File "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd" Line 61
+Failure: FIN CONTROLADO DE LA SIMULACION
+Time: 857500 ns  Iteration: 0  Process: /KYPD_controller_tb/line__51  File: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd
+$finish called at time : 857500 ns : File "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd" Line 61
+Failure: FIN CONTROLADO DE LA SIMULACION
+Time: 1286250 ns  Iteration: 0  Process: /KYPD_controller_tb/line__51  File: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd
+$finish called at time : 1286250 ns : File "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd" Line 61
+Failure: FIN CONTROLADO DE LA SIMULACION
+Time: 1715 us  Iteration: 0  Process: /KYPD_controller_tb/line__51  File: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd
+$finish called at time : 1715 us : File "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd" Line 61
