@@ -44,19 +44,19 @@ begin
 
 -- En este proceso se modela el prescaler 1, para generar el clock enable del contador (CE_COL).
 process (CLK, RST)
---constant N1 : integer := 3500000;     -- 35 ms
-constant N1 : integer := 350;        -- 35 ms, pero con factor de escalada x10^-4 
+--constant N1 : integer := 3000000;     -- 30 ms
+constant N1 : integer := 300;        -- 30 ms, pero con factor de escalada x10^-4 
 begin
     if (RST = '1') then
         CE_COL <= '0';
         CONT <= (others => '0');
     elsif (CLK'event and CLK = '1') then
         if(CE_ROW = '1') then
-            if (CONT = N1-1) then   --Cuando N es 34999999 , cambia el valor de CE_COL a 1.
+            if (CONT = N1-1) then   --Cuando N es 2999999 , cambia el valor de CE_COL a 1.
                 CONT <= (others => '0');
                 CE_COL <= '1';
             else
-                CONT <= CONT+1;     --Mientras que N es distinto 34999999, mantiene CE_COL a 0.
+                CONT <= CONT+1;     --Mientras que N es distinto 2999999, mantiene CE_COL a 0.
                 CE_COL <= '0';
             end if;
         end if;
@@ -106,7 +106,7 @@ begin
     end if;
 end process;
  
--- Creamos el decodificador, a partir de la señal del contador COL_CNT.  
+-- Creamos el decodificador, a partir de la señal del contador COL_CNT, con ello creamos las columnas.  
 process (COL_CNT)
 begin
     case COL_CNT is

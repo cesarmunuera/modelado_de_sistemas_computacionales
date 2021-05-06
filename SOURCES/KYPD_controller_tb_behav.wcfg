@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="101500000001fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomStartTime time="1607930400000fs"></ZoomStartTime>
+      <ZoomEndTime time="1608178600001fs"></ZoomEndTime>
+      <Cursor1Time time="1608055000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="145"></NameColumnWidth>
+      <NameColumnWidth column_width="141"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="10" />
    <wvobject fp_name="/KYPD_controller_tb/TECLA_i" type="array">
       <obj_property name="ElementShortName">TECLA_i[3:0]</obj_property>
       <obj_property name="ObjectShortName">TECLA_i[3:0]</obj_property>
@@ -33,18 +33,36 @@
       <obj_property name="ObjectShortName">COL[3:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
+   <wvobject fp_name="/KYPD_controller_tb/DUT/KEY_CODE" type="array">
+      <obj_property name="ElementShortName">KEY_CODE[3:0]</obj_property>
+      <obj_property name="ObjectShortName">KEY_CODE[3:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/KYPD_controller_tb/DUT/KEY_CODE_OK" type="logic">
+      <obj_property name="ElementShortName">KEY_CODE_OK</obj_property>
+      <obj_property name="ObjectShortName">KEY_CODE_OK</obj_property>
+   </wvobject>
    <wvobject fp_name="/KYPD_controller_tb/DUT/ROW_OK" type="logic">
       <obj_property name="ElementShortName">ROW_OK</obj_property>
       <obj_property name="ObjectShortName">ROW_OK</obj_property>
       <obj_property name="CustomSignalColor">#FF0000</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/KYPD_controller_tb/DUT/KEY_CODE" type="array">
-      <obj_property name="ElementShortName">KEY_CODE[3:0]</obj_property>
-      <obj_property name="ObjectShortName">KEY_CODE[3:0]</obj_property>
+   <wvobject fp_name="/KYPD_controller_tb/DUT/COL_CNT" type="array">
+      <obj_property name="ElementShortName">COL_CNT[1:0]</obj_property>
+      <obj_property name="ObjectShortName">COL_CNT[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/KYPD_controller_tb/DUT/KEY_CODE_OK" type="logic">
-      <obj_property name="ElementShortName">KEY_CODE_OK</obj_property>
-      <obj_property name="ObjectShortName">KEY_CODE_OK</obj_property>
+   <wvobject fp_name="/KYPD_controller_tb/DUT/CE_ROW" type="logic">
+      <obj_property name="ElementShortName">CE_ROW</obj_property>
+      <obj_property name="ObjectShortName">CE_ROW</obj_property>
+   </wvobject>
+   <wvobject fp_name="/KYPD_controller_tb/DUT/CE_COL" type="logic">
+      <obj_property name="ElementShortName">CE_COL</obj_property>
+      <obj_property name="ObjectShortName">CE_COL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/KYPD_controller_tb/DUT/DF" type="logic">
+      <obj_property name="ElementShortName">DF</obj_property>
+      <obj_property name="ObjectShortName">DF</obj_property>
    </wvobject>
 </wave_config>
