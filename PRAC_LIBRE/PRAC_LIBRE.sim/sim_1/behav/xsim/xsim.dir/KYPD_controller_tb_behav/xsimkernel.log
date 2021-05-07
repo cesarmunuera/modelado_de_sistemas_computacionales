@@ -1,7 +1,7 @@
-Running: xsim.dir/KYPD_controller_tb_behav/xsimk.exe -simmode gui -wdb KYPD_controller_tb_behav.wdb -simrunnum 0 -socket 50676
+Running: xsim.dir/KYPD_controller_tb_behav/xsimk.exe -simmode gui -wdb KYPD_controller_tb_behav.wdb -simrunnum 0 -socket 49375
 Design successfully loaded
-Design Loading Memory Usage: 6956 KB (Peak: 6956 KB)
+Design Loading Memory Usage: 6856 KB (Peak: 6856 KB)
 Design Loading CPU Usage: 0 ms
 Simulation completed
-Simulation Memory Usage: 7896 KB (Peak: 7896 KB)
-Simulation CPU Usage: 952 ms
+Simulation Memory Usage: 7496 KB (Peak: 7496 KB)
+Simulation CPU Usage: 0 ms

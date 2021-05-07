@@ -45,7 +45,7 @@ begin
 -- En este proceso se modela el prescaler 1, para generar el clock enable del contador (CE_COL).
 process (CLK, RST)
 --constant N1 : integer := 3000000;     -- 30 ms
-constant N1 : integer := 300;        -- 30 ms, pero con factor de escalada x10^-4 
+constant N1 : integer := 6;        -- 30 ms, pero con factor de escalada x10^-4 
 begin
     if (RST = '1') then
         CE_COL <= '0';
@@ -65,7 +65,7 @@ end process;
 
 -- En este proceso se modela el prescaler 2, para generar el clock enable de las filas (CE_ROW).
 process (CLK, RST)
---constant N2 : integer := 700000;     -- 7ms
+--constant N2 : integer := 7000000;     -- 7ms
 constant N2 : integer := 70;     -- 7ms, pero con factor de escalada x10^-4 
 begin
     if (RST = '1') then
