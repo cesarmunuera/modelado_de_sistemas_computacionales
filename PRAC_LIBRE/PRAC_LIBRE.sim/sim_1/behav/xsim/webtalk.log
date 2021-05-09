@@ -2,13 +2,13 @@
 # Webtalk v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun May  9 19:12:00 2021
-# Process ID: 8548
-# Current directory: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim/xsim.dir/KYPD_controller_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim\webtalk.jou
+# Start of session at: Sun May  9 21:05:17 2021
+# Process ID: 35680
+# Current directory: C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim/xsim.dir/KYPD_controller_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/cesar/Desktop/Uni/Programas -notrace
-couldn't read file "C:/Users/cesar/Desktop/Uni/Programas": no such file or directory
-INFO: [Common 17-206] Exiting Webtalk at Sun May  9 19:12:00 2021...
+source C:/Users/sergi/OneDrive/UNI/3º/Modelado -notrace
+couldn't read file "C:/Users/sergi/OneDrive/UNI/3º/Modelado": permission denied
+INFO: [Common 17-206] Exiting Webtalk at Sun May  9 21:05:17 2021...

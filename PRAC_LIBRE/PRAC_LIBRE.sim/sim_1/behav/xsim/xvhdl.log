@@ -1,8 +1,8 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/debounce_module.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/debounce_module.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity debounce_module
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity KYPD_controller
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/teclado.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/teclado.vhdl" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity teclado
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity KYPD_controller_tb

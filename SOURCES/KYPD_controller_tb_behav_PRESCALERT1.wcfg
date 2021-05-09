@@ -10,15 +10,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1535674455000fs"></ZoomStartTime>
-      <ZoomEndTime time="1543514455001fs"></ZoomEndTime>
-      <Cursor1Time time="1541910000000fs"></Cursor1Time>
+      <ZoomStartTime time="5028752500fs"></ZoomStartTime>
+      <ZoomEndTime time="5169652501fs"></ZoomEndTime>
+      <Cursor1Time time="5082100000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="133"></NameColumnWidth>
+      <NameColumnWidth column_width="129"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="5" />
+   <wave_markers>
+      <marker time="135000000" label="" />
+   </wave_markers>
    <wvobject fp_name="/KYPD_controller_tb/DUT/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
