@@ -22,7 +22,7 @@ architecture sim of KYPD_controller_tb is
   -- Factor de escalada es x10^-4
   constant REBTIME  : time    := 700 ns;       --Duración de un rebote
   constant M        : integer := 4;           -- Nº de rebotes
-  constant PUSHTIME : time    := 21000 ns;    -- Duración de una pulsación -> Pushtime>4T1 -> 6T1 = 210ms
+  constant PUSHTIME : time    := 29400 ns;    -- Duración de una pulsación -> Pushtime>4T1 -> 6T1 = 210ms
   signal   TECLA_i  : std_logic_vector(3 downto 0);
 begin  --  sim
 

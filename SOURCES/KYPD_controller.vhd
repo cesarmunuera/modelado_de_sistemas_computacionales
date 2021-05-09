@@ -44,12 +44,13 @@ begin
 
 -- En este proceso se modela el prescaler 1, para generar el clock enable del contador (CE_COL).
 process (CLK, RST)
-constant N1 : integer := 6;        -- 42 ms 
+constant N1 : integer := 7;        -- 42 ms 
 begin
     if (RST = '1') then
         CE_COL <= '0';
         CONT <= (others => '0');
     elsif (CLK'event and CLK = '1') then
+        CE_COL <= '0';
         if(CE_ROW = '1') then
             if (CONT = N1-1) then   --Cuando N es 5 , cambia el valor de CE_COL a 1.
                 CONT <= (others => '0');

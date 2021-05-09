@@ -10,25 +10,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="9900000000fs"></ZoomStartTime>
-      <ZoomEndTime time="17740000001fs"></ZoomEndTime>
-      <Cursor1Time time="13305000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="102600000001fs"></ZoomEndTime>
+      <Cursor1Time time="1715000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="133"></NameColumnWidth>
+      <NameColumnWidth column_width="129"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="8" />
    <wvobject fp_name="/KYPD_controller_tb/TECLA_i" type="array">
       <obj_property name="ElementShortName">TECLA_i[3:0]</obj_property>
       <obj_property name="ObjectShortName">TECLA_i[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/KYPD_controller_tb/DUT/Q_ROW" type="array">
-      <obj_property name="ElementShortName">Q_ROW[3:0]</obj_property>
-      <obj_property name="ObjectShortName">Q_ROW[3:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/KYPD_controller_tb/DUT/ROW" type="array">
       <obj_property name="ElementShortName">ROW[3:0]</obj_property>
@@ -40,13 +33,13 @@
       <obj_property name="ObjectShortName">COL[3:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/KYPD_controller_tb/DUT/COL_CNT" type="array">
-      <obj_property name="ElementShortName">COL_CNT[1:0]</obj_property>
-      <obj_property name="ObjectShortName">COL_CNT[1:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/KYPD_controller_tb/DUT/ROW_OK" type="logic">
       <obj_property name="ElementShortName">ROW_OK</obj_property>
       <obj_property name="ObjectShortName">ROW_OK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/KYPD_controller_tb/DUT/COL_CNT" type="array">
+      <obj_property name="ElementShortName">COL_CNT[1:0]</obj_property>
+      <obj_property name="ObjectShortName">COL_CNT[1:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/KYPD_controller_tb/DUT/CE_COL" type="logic">
       <obj_property name="ElementShortName">CE_COL</obj_property>
@@ -55,5 +48,12 @@
    <wvobject fp_name="/KYPD_controller_tb/DUT/KEY_CODE" type="array">
       <obj_property name="ElementShortName">KEY_CODE[3:0]</obj_property>
       <obj_property name="ObjectShortName">KEY_CODE[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/KYPD_controller_tb/DUT/Q_ROW" type="array">
+      <obj_property name="ElementShortName">Q_ROW[3:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_ROW[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
 </wave_config>
