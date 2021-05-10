@@ -1,11 +1,11 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/impl/timing/xsim/spi_controller_tb_time_impl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module oled_controller
-INFO: [VRFC 10-311] analyzing module spi_controller
-INFO: [VRFC 10-311] analyzing module test_oled
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/impl/timing/xsim/KYPD_controller_tb_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KYPD_controller
+INFO: [VRFC 10-311] analyzing module debounce_module
+INFO: [VRFC 10-311] analyzing module debounce_module_0
+INFO: [VRFC 10-311] analyzing module debounce_module_1
+INFO: [VRFC 10-311] analyzing module debounce_module_2
 INFO: [VRFC 10-311] analyzing module glbl
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity spi_controller
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_device.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity spi_device
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity spi_controller_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/teclado.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity teclado
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity KYPD_controller_tb
