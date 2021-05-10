@@ -2,7 +2,17 @@ INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado
 INFO: [VRFC 10-307] analyzing entity debounce_module
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity KYPD_controller
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/oled_controller.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity oled_controller
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity spi_controller
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/test_oled.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity test_oled
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/teclado.vhdl" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity teclado
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity KYPD_controller_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_device.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity spi_device
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/sergi/OneDrive/UNI/3º/Modelado de Sistemas Computacionales/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity spi_controller_tb

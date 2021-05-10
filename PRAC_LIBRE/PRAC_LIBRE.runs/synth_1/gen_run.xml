@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1620579429">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1620642642">
   <File Type="PA-TCL" Name="KYPD_controller.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="KYPD_controller_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="KYPD_controller_reports.tcl"/>
   <File Type="RDS-RDS" Name="KYPD_controller.vds"/>
   <File Type="RDS-UTIL" Name="KYPD_controller_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="KYPD_controller_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="KYPD_controller.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="KYPD_controller_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="KYPD_controller_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../SOURCES/debounce_module.vhd">
@@ -22,21 +25,18 @@
     </File>
     <File Path="$PPRDIR/../SOURCES/oled_controller.vhdl">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../SOURCES/spi_controller.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../SOURCES/test_oled.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -59,7 +59,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
