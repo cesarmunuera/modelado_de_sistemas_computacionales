@@ -2,11 +2,11 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Mon May 10 19:52:33 2021
-# Process ID: 1712
-# Current directory: C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/synth_1
-# Command line: vivado.exe -log KYPD_controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source KYPD_controller.tcl
-# Log file: C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/synth_1/KYPD_controller.vds
-# Journal file: C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/synth_1\vivado.jou
+# Start of session at: Mon May 10 20:06:52 2021
+# Process ID: 620
+# Current directory: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/synth_1
+# Command line: vivado.exe -log test_oled.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_oled.tcl
+# Log file: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/synth_1/test_oled.vds
+# Journal file: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source KYPD_controller.tcl -notrace
+source test_oled.tcl -notrace

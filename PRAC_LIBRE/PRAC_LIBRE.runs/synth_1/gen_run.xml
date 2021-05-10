@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1620669149">
-  <File Type="PA-TCL" Name="KYPD_controller.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="KYPD_controller_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="KYPD_controller_reports.tcl"/>
-  <File Type="RDS-RDS" Name="KYPD_controller.vds"/>
-  <File Type="RDS-UTIL" Name="KYPD_controller_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="KYPD_controller_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="KYPD_controller.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="KYPD_controller_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="KYPD_controller_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1620670010">
+  <File Type="PA-TCL" Name="test_oled.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="test_oled_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="test_oled_reports.tcl"/>
+  <File Type="RDS-RDS" Name="test_oled.vds"/>
+  <File Type="RDS-UTIL" Name="test_oled_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="test_oled_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="test_oled.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="test_oled_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="test_oled_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../SOURCES/debounce_module.vhd">
@@ -25,28 +25,25 @@
     </File>
     <File Path="$PPRDIR/../SOURCES/oled_controller.vhdl">
       <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../SOURCES/spi_controller.vhd">
       <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../SOURCES/test_oled.vhd">
       <FileInfo>
-        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="KYPD_controller"/>
+      <Option Name="TopModule" Val="test_oled"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
