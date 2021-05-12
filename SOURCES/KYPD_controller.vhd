@@ -16,7 +16,7 @@ architecture behavior of KYPD_controller is
   signal    CE_COL       : std_logic;                    --Bloque 1: Salida del primer prescaler. Clock enable de las columnas
   signal    CONT         : unsigned (9 downto 0);        --Bloque 1: Contador  obtener CE_COL.
   signal    CE_ROW       : std_logic;                    --Bloque 1: Salida del primer prescaler. Clock enable de las filas.
-  signal    CONT2        : unsigned (9 downto 0);        --Bloque 1: Contador  obtener CE_ROW.
+  signal    CONT2        : unsigned (19 downto 0);       --Bloque 1: Contador  obtener CE_ROW.
   signal    COL_AUX      : std_logic_vector(3 downto 0); --Bloque 1: Es la misma señal que COL.
   signal    ROW_OK       : std_logic;                    --Bloque 2: Un "CE" para Colum Control.
   signal    COL_CNT      : unsigned (1 downto 0);        --Bloque 2: Señal de la columna, salida del contador.
@@ -65,7 +65,7 @@ end process;
 
 -- En este proceso se modela el prescaler 2, para generar el clock enable de las filas (CE_ROW).
 process (CLK, RST)
---constant N2 : integer := 7000000;     -- 7ms
+--constant N2 : integer := 700000;     -- 7ms
 constant N2 : integer := 70;     -- 7ms, pero con factor de escalada x10^-4 
 begin
     if (RST = '1') then
