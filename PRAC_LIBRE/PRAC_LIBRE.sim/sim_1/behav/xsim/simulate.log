@@ -1,11 +1,5 @@
 Vivado Simulator 2017.4
 Time resolution is 1 ps
 Failure: FIN CONTROLADO DE LA SIMULACION
-Time: 48530 ns  Iteration: 0  Process: /mangm_KYPD_tb/line__45  File: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD_tb.vhd
-$finish called at time : 48530 ns : File "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD_tb.vhd" Line 56
-Failure: FIN CONTROLADO DE LA SIMULACION
-Time: 97060 ns  Iteration: 0  Process: /mangm_KYPD_tb/line__45  File: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD_tb.vhd
-$finish called at time : 97060 ns : File "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD_tb.vhd" Line 56
-Failure: FIN CONTROLADO DE LA SIMULACION
-Time: 145590 ns  Iteration: 0  Process: /mangm_KYPD_tb/line__45  File: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD_tb.vhd
-$finish called at time : 145590 ns : File "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD_tb.vhd" Line 56
+Time: 128530 ns  Iteration: 0  Process: /mangm_KYPD_tb/line__45  File: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD_tb.vhd
+$finish called at time : 128530 ns : File "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD_tb.vhd" Line 56

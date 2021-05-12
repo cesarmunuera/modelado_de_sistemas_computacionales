@@ -23,8 +23,8 @@ architecture sim of mangm_KYPD_tb is
   signal DP_i          : std_logic;
   signal SEG_AG_i      : std_logic_vector(6 downto 0);
   signal AND_30_i      : std_logic_vector(3 downto 0);
-  constant T_KEY_CODE  : time    :=  3000ns;  -- para simulacion (escalado x10^-3)
-  --constant T_KEY_CODE  : time    := 3ms;  -- para implementacion
+  constant T_KEY_CODE  : time    :=  8000ns;  -- para simulacion (escalado x10^-3)
+  --constant T_KEY_CODE  : time    := 8ms;  -- para implementacion
 begin  -- sim
 
   DUT : entity work.mangm_KYPD
