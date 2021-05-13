@@ -10,6 +10,8 @@ INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas va
 INFO: [VRFC 10-307] analyzing entity test_oled
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity mangm_KYPD
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity top_system
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/teclado.vhdl" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity teclado
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd" into library xil_defaultlib
@@ -20,3 +22,5 @@ INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas va
 INFO: [VRFC 10-307] analyzing entity spi_controller_tb
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity mangm_KYPD_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity top_system_tb

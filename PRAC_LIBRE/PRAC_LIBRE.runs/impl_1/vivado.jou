@@ -2,11 +2,11 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Mon May 10 20:07:44 2021
-# Process ID: 10248
+# Start of session at: Thu May 13 18:08:09 2021
+# Process ID: 14596
 # Current directory: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/impl_1
-# Command line: vivado.exe -log test_oled.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source test_oled.tcl -notrace
-# Log file: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/impl_1/test_oled.vdi
+# Command line: vivado.exe -log top_system.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_system.tcl -notrace
+# Log file: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/impl_1/top_system.vdi
 # Journal file: C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
-source test_oled.tcl -notrace
+source top_system.tcl -notrace
