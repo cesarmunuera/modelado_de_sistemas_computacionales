@@ -128,7 +128,6 @@ COL_ROW <= (COL_AUX & Q_ROW);
 -- Codificador
 process (COL_ROW)
 begin
-    KEY_CODE_AUX <= "0000";
     case COL_ROW is
         when "11100111"  => KEY_CODE_AUX <= "0000"; -- 0
         when "11101110"  => KEY_CODE_AUX <= "0001"; -- 1
@@ -146,7 +145,7 @@ begin
         when "01110111"  => KEY_CODE_AUX <= "1101"; -- D
         when "10110111"  => KEY_CODE_AUX <= "1110"; -- E
         when "11010111"  => KEY_CODE_AUX <= "1111"; -- F
-        when others => null;
+        when others => KEY_CODE_AUX <= "0000";
     end case;
 end process;
 

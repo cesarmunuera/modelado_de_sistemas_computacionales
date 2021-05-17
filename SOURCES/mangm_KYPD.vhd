@@ -18,7 +18,7 @@ architecture rtl of mangm_KYPD is
 signal   data_aux           : std_logic_vector(7 downto 0);           -- Bloque 1. Señal que lleva el valor de 2 teclas (D1D0). 
 signal   data2_aux          : std_logic_vector(7 downto 0);           -- Bloque 1. Señal que lleva el valor de 2 teclas (D3D2).
 constant cte_1ms : natural  := 300;                                   -- para simulacion
---  constant cte_1ms    : natural := 3e5;                             -- para implementacion
+--constant cte_1ms            : natural := 3e5;                         -- para implementacion
 signal   cnt_1ms            : unsigned(16 downto 0);                  -- Bloque 3. Contador del prescaler. Tiene tamaño 17 por si se usa el otro valor de cnt_1ms en el prescaler.
 signal   dato               : std_logic_vector(3 downto 0);           -- Bloque 3. Salida del MUX.
 signal   sel_dsply          : unsigned(1 downto 0);                   -- Bloque 3. Contador selector del MUX.
@@ -130,7 +130,7 @@ begin
     begin  -- process
         if rst = '1' then
             sel_dsply   <= (others => '0');
-        elsif clk'event and clk = '1' then
+        elsif (clk'event and clk = '1') then
             if cnt_1ms = cte_1ms-1 then
                 sel_dsply <= sel_dsply +1;
             end if;

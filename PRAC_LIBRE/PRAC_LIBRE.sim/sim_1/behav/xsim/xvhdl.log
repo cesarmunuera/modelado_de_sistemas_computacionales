@@ -6,8 +6,6 @@ INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas va
 INFO: [VRFC 10-307] analyzing entity oled_controller
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity spi_controller
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/test_oled.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity test_oled
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity mangm_KYPD
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd" into library xil_defaultlib

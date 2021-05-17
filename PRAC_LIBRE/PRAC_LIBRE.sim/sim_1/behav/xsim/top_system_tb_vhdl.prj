@@ -4,7 +4,6 @@ vhdl xil_defaultlib  \
 "../../../../../SOURCES/KYPD_controller.vhd" \
 "../../../../../SOURCES/oled_controller.vhdl" \
 "../../../../../SOURCES/spi_controller.vhd" \
-"../../../../../SOURCES/test_oled.vhd" \
 "../../../../../SOURCES/mangm_KYPD.vhd" \
 "../../../../../SOURCES/top_system.vhd" \
 "../../../../../SOURCES/teclado.vhdl" \
