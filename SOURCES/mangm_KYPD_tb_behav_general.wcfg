@@ -3,73 +3,75 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="mangm_KYPD_tb_behav.wdb" id="1">
+      <db_ref path="top_system_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="mangm_KYPD_tb" />
+            <top_module name="top_system_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="51600000001fs"></ZoomEndTime>
-      <Cursor1Time time="128530000000fs"></Cursor1Time>
+      <ZoomStartTime time="80000000fs"></ZoomStartTime>
+      <ZoomEndTime time="229800001fs"></ZoomEndTime>
+      <Cursor1Time time="155000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="125"></NameColumnWidth>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="163"></NameColumnWidth>
+      <ValueColumnWidth column_width="100"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="11" />
-   <wvobject fp_name="/mangm_KYPD_tb/RST_i" type="logic">
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/top_system_tb/DUT/U_KYPD/ROW_OK" type="logic">
+      <obj_property name="ElementShortName">ROW_OK</obj_property>
+      <obj_property name="ObjectShortName">ROW_OK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_KYPD/Q" type="logic">
+      <obj_property name="ElementShortName">Q</obj_property>
+      <obj_property name="ObjectShortName">Q</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/RST_i" type="logic">
       <obj_property name="ElementShortName">RST_i</obj_property>
       <obj_property name="ObjectShortName">RST_i</obj_property>
    </wvobject>
-   <wvobject fp_name="/mangm_KYPD_tb/CLK_i" type="logic">
-      <obj_property name="ElementShortName">CLK_i</obj_property>
-      <obj_property name="ObjectShortName">CLK_i</obj_property>
+   <wvobject fp_name="/top_system_tb/DUT/U_KYPD/DF" type="logic">
+      <obj_property name="ElementShortName">DF</obj_property>
+      <obj_property name="ObjectShortName">DF</obj_property>
    </wvobject>
-   <wvobject fp_name="/mangm_KYPD_tb/KEY_CODE_OK_i" type="logic">
-      <obj_property name="ElementShortName">KEY_CODE_OK_i</obj_property>
-      <obj_property name="ObjectShortName">KEY_CODE_OK_i</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mangm_KYPD_tb/KEY_CODE_i" type="array">
-      <obj_property name="ElementShortName">KEY_CODE_i[3:0]</obj_property>
-      <obj_property name="ObjectShortName">KEY_CODE_i[3:0]</obj_property>
+   <wvobject fp_name="/top_system_tb/DUT/U_MANGM/KEY_CODE_OK" type="logic">
+      <obj_property name="ElementShortName">KEY_CODE_OK</obj_property>
+      <obj_property name="ObjectShortName">KEY_CODE_OK</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/mangm_KYPD_tb/DATA_OK_i" type="logic">
-      <obj_property name="ElementShortName">DATA_OK_i</obj_property>
-      <obj_property name="ObjectShortName">DATA_OK_i</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mangm_KYPD_tb/DATA_i" type="array">
-      <obj_property name="ElementShortName">DATA_i[7:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA_i[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mangm_KYPD_tb/SEG_AG_i" type="array">
-      <obj_property name="ElementShortName">SEG_AG_i[6:0]</obj_property>
-      <obj_property name="ObjectShortName">SEG_AG_i[6:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+   <wvobject fp_name="/top_system_tb/DUT/U_MANGM/data_ok_aux" type="logic">
+      <obj_property name="ElementShortName">data_ok_aux</obj_property>
+      <obj_property name="ObjectShortName">data_ok_aux</obj_property>
       <obj_property name="CustomSignalColor">#00FFFF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/mangm_KYPD_tb/AND_30_i" type="array">
-      <obj_property name="ElementShortName">AND_30_i[3:0]</obj_property>
-      <obj_property name="ObjectShortName">AND_30_i[3:0]</obj_property>
+   <wvobject fp_name="/top_system_tb/DUT/U_MANGM/DATA" type="array">
+      <obj_property name="ElementShortName">DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_MANGM/dato" type="array">
+      <obj_property name="ElementShortName">dato[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dato[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_MANGM/KEY_CODE" type="array">
+      <obj_property name="ElementShortName">KEY_CODE[3:0]</obj_property>
+      <obj_property name="ObjectShortName">KEY_CODE[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_MANGM/AND_30" type="array">
+      <obj_property name="ElementShortName">AND_30[3:0]</obj_property>
+      <obj_property name="ObjectShortName">AND_30[3:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_system_tb/DUT/U_MANGM/estado_act" type="other">
+      <obj_property name="ElementShortName">estado_act</obj_property>
+      <obj_property name="ObjectShortName">estado_act</obj_property>
       <obj_property name="CustomSignalColor">#FF00FF</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/mangm_KYPD_tb/DUT/data2_aux" type="array">
-      <obj_property name="ElementShortName">data2_aux[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data2_aux[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mangm_KYPD_tb/DUT/data_aux" type="array">
-      <obj_property name="ElementShortName">data_aux[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data_aux[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/mangm_KYPD_tb/DUT/data_ok_aux" type="logic">
-      <obj_property name="ElementShortName">data_ok_aux</obj_property>
-      <obj_property name="ObjectShortName">data_ok_aux</obj_property>
+   <wvobject fp_name="/top_system_tb/DUT/U_MANGM/KEY_CODE" type="array">
+      <obj_property name="ElementShortName">KEY_CODE[3:0]</obj_property>
+      <obj_property name="ObjectShortName">KEY_CODE[3:0]</obj_property>
    </wvobject>
 </wave_config>

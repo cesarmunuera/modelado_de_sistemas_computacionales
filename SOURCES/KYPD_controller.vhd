@@ -181,7 +181,7 @@ end process;
 process(CLK, RST)
 begin
     if (RST = '1') then
-        --KEY_CODE_OK <= '0';
+        KEY_CODE_OK <= '0';
     elsif (CLK'event and CLK = '1') then
         KEY_CODE_OK <= DF;
     end if;

@@ -9,7 +9,7 @@ entity mangm_KYPD is
        DATA_OK     : out std_logic;
        DATA        : out std_logic_vector (7 downto 0);
        DP          : out std_logic;
-       SEG_AG      : out std_logic_vector(6 downto 0);  -- gfedcba -> SeÃ±al para el display de 7 segmentos.
+       SEG_AG      : out std_logic_vector(6 downto 0);  -- gfedcba -> Señal para el display de 7 segmentos.
        AND_30      : out std_logic_vector(3 downto 0)); -- Señal para elegir el display que se enciende/apaga.
 end mangm_KYPD;
 
@@ -19,7 +19,7 @@ signal   data_aux           : std_logic_vector(7 downto 0);           -- Bloque 
 signal   data2_aux          : std_logic_vector(7 downto 0);           -- Bloque 1. Señal que lleva el valor de 2 teclas (D3D2).
 constant cte_1ms : natural  := 300;                                   -- para simulacion
 --constant cte_1ms            : natural := 3e5;                         -- para implementacion
-signal   cnt_1ms            : unsigned(19 downto 0);                  -- Bloque 3. Contador del prescaler. Tiene tamaño 17 por si se usa el otro valor de cnt_1ms en el prescaler.
+signal   cnt_1ms            : unsigned(19 downto 0);                  -- Bloque 3. Contador del prescaler. Tiene tamaño 20 por si se usa el otro valor de cnt_1ms en el prescaler.
 signal   dato               : std_logic_vector(3 downto 0);           -- Bloque 3. Salida del MUX.
 signal   sel_dsply          : unsigned(1 downto 0);                   -- Bloque 3. Contador selector del MUX.
 signal   data_ok_aux        : std_logic;                              -- Bloque
@@ -60,12 +60,12 @@ begin
     -- Esto es la maquina de estados finitos. La maquina parte del reposo en el estado idle. Cuando le entra
     -- la señal KEY_CODE_OK activa, pasa al estado tecla_1. Si vuelve a entrar la seÃ±al KEY_CODE_OK activa, 
     -- pasa al estado ld_data. 
-    -- Este es el estado en el que ya podriamos activar la seÃ±al DATA_OK, en el siguiente proceso. Si vuelve
+    -- Este es el estado en el que ya podriamos activar la señal DATA_OK, en el siguiente proceso. Si vuelve
     -- a entrar KEY_CODE_OK activa, pasa al estado idle, y reiniciamos.
     process (CLK, RST)
     begin
         if RST = '1' then
-            estado_act       <= idle;
+            estado_act <= idle;
         elsif CLK'event and CLK = '1' then
             case estado_act is
                 when idle    =>                     -- Estado de reposo
@@ -93,7 +93,7 @@ begin
             DATA_OK   <= '0';
             data_ok_aux <= '0';
             if estado_act = ld_data then
-                DATA    <= data_aux;
+                DATA <= data_aux;
                 data_ok_aux <= '1';
                 DATA_OK <= '1';
             end if;
@@ -154,7 +154,7 @@ begin
     -- mas bajos de data_aux. Si es 01, son los 4 bits mas altos. 
     -- Si es 10, la salida son los 4 bits mas bajos de data2_aux. Si es 11, son los 
     -- 4 bits mas altos.
-    process (sel_dsply)
+    process (sel_dsply, data_aux, data2_aux)
     begin
         case sel_dsply is
             when "00" => DATO <= data_aux(3 downto 0);
