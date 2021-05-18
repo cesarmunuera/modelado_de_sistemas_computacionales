@@ -21,19 +21,19 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.xpr} [current_project]
+set_property webtalk.parent_dir C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.cache/wt [current_project]
+set_property parent.project_path C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo {c:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.cache/ip} [current_project]
+set_property ip_output_repo c:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  {C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/debounce_module.vhd}
-  {C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd}
-  {C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/oled_controller.vhdl}
-  {C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd}
-  {C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd}
-  {C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd}
+  C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/debounce_module.vhd
+  C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd
+  C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/oled_controller.vhdl
+  C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd
+  C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd
+  C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -43,8 +43,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system.xdc}}]
+read_xdc C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.xdc
+set_property used_in_implementation false [get_files C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.xdc]
 
 
 synth_design -top top_system -part xc7a35tcpg236-1

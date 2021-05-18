@@ -68,12 +68,12 @@ set rc [catch {
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir {C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.cache/wt} [current_project]
-  set_property parent.project_path {C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.xpr} [current_project]
-  set_property ip_output_repo {{C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.cache/ip}} [current_project]
+  set_property webtalk.parent_dir C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.cache/wt [current_project]
+  set_property parent.project_path C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.xpr [current_project]
+  set_property ip_output_repo C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet {{C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/synth_1/top_system.dcp}}
-  read_xdc {{C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system.xdc}}
+  add_files -quiet C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/synth_1/top_system.dcp
+  read_xdc C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.xdc
   link_design -top top_system -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]

@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Mon May 17 12:33:18 2021
-| Host         : Torre running 64-bit major release  (build 9200)
+| Date         : Tue May 18 11:19:25 2021
+| Host         : LAPTOP-NU8BRVH7 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_system_control_sets_placed.rpt
 | Design       : top_system
 | Device       : xc7a35t
@@ -33,11 +33,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               7 |            5 |
-| No           | No                    | Yes                    |              84 |           31 |
-| No           | Yes                   | No                     |               4 |            1 |
+| No           | No                    | No                     |               6 |            4 |
+| No           | No                    | Yes                    |              85 |           32 |
+| No           | Yes                   | No                     |               4 |            2 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             142 |           45 |
+| Yes          | No                    | Yes                    |             142 |           43 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -48,29 +48,29 @@ Table of Contents
 +----------------+----------------------------------------+-------------------------------+------------------+----------------+
 |  Clock Signal  |              Enable Signal             |        Set/Reset Signal       | Slice Load Count | Bel Load Count |
 +----------------+----------------------------------------+-------------------------------+------------------+----------------+
-|  CLK_IBUF_BUFG | U_SPI/SDIN_i_1_n_0                     | RST_IBUF                      |                1 |              1 |
-|  CLK_IBUF_BUFG | U_OLED/BUSY_i_1_n_0                    | RST_IBUF                      |                1 |              1 |
 |  CLK_IBUF_BUFG | U_OLED/FSM_onehot_std_2_reg_n_0_[1]    | RST_IBUF                      |                1 |              1 |
+|  CLK_IBUF_BUFG | U_OLED/BUSY_i_1_n_0                    | RST_IBUF                      |                1 |              1 |
 |  CLK_IBUF_BUFG | U_OLED/RES_i_1_n_0                     | RST_IBUF                      |                1 |              1 |
-|  CLK_IBUF_BUFG | U_OLED/VAL_TIME_2                      | RST_IBUF                      |                2 |              3 |
-|  CLK_IBUF_BUFG |                                        | U_OLED/cnt_ADDR_cfg_reg__0[5] |                1 |              4 |
-|  CLK_IBUF_BUFG | U_SPI/COUNTER_REG                      | RST_IBUF                      |                1 |              4 |
+|  CLK_IBUF_BUFG | U_SPI/SDIN_i_1_n_0                     | RST_IBUF                      |                1 |              1 |
+|  CLK_IBUF_BUFG | U_OLED/VAL_TIME_2                      | RST_IBUF                      |                1 |              3 |
+|  CLK_IBUF_BUFG |                                        | U_OLED/cnt_ADDR_cfg_reg__0[5] |                2 |              4 |
 |  CLK_IBUF_BUFG | U_KYPD/DF                              | RST_IBUF                      |                2 |              4 |
 |  CLK_IBUF_BUFG | U_OLED/cnt_cmd_glob                    | RST_IBUF                      |                1 |              4 |
+|  CLK_IBUF_BUFG | U_SPI/COUNTER_REG                      | RST_IBUF                      |                1 |              4 |
 |  CLK_IBUF_BUFG | U_OLED/FSM_onehot_state_cfg[4]_i_1_n_0 | RST_IBUF                      |                2 |              5 |
-|  CLK_IBUF_BUFG |                                        |                               |                5 |              7 |
+|  CLK_IBUF_BUFG |                                        |                               |                4 |              6 |
 |  CLK_IBUF_BUFG | U_OLED/cnt_ADDR_cfg                    | RST_IBUF                      |                2 |              7 |
 |  CLK_IBUF_BUFG | U_OLED/cnt_msg[6]_i_1_n_0              | RST_IBUF                      |                2 |              7 |
-|  CLK_IBUF_BUFG | U_SPI/BUSY                             | RST_IBUF                      |                3 |              8 |
-|  CLK_IBUF_BUFG | U_KYPD/KEY_CODE_OK                     | RST_IBUF                      |                2 |              8 |
-|  CLK_IBUF_BUFG | U_MANGM/data2_aux[7]_i_1_n_0           | RST_IBUF                      |                3 |              8 |
+|  CLK_IBUF_BUFG | U_KYPD/KEY_CODE_OK                     | RST_IBUF                      |                3 |              8 |
 |  CLK_IBUF_BUFG | U_MANGM/DATA_OK_i_1_n_0                | RST_IBUF                      |                2 |              8 |
+|  CLK_IBUF_BUFG | U_MANGM/data2_aux[7]_i_1_n_0           | RST_IBUF                      |                2 |              8 |
 |  CLK_IBUF_BUFG | U_OLED/FSM_onehot_std_2[7]_i_1_n_0     | RST_IBUF                      |                2 |              8 |
-|  CLK_IBUF_BUFG | U_OLED/DATA_TX_OK                      | RST_IBUF                      |                4 |              9 |
+|  CLK_IBUF_BUFG | U_SPI/BUSY                             | RST_IBUF                      |                2 |              8 |
+|  CLK_IBUF_BUFG | U_OLED/DATA_TX_OK                      | RST_IBUF                      |                3 |              9 |
 |  CLK_IBUF_BUFG | U_OLED/E[0]                            | RST_IBUF                      |                2 |              9 |
 |  CLK_IBUF_BUFG | U_OLED/cnt_pix[9]_i_1_n_0              | RST_IBUF                      |                5 |             20 |
-|  CLK_IBUF_BUFG | U_KYPD/CE_ROW_reg_n_0                  | RST_IBUF                      |                6 |             26 |
-|  CLK_IBUF_BUFG |                                        | RST_IBUF                      |               31 |             84 |
+|  CLK_IBUF_BUFG | U_KYPD/CE_ROW_reg_n_0                  | RST_IBUF                      |                7 |             26 |
+|  CLK_IBUF_BUFG |                                        | RST_IBUF                      |               32 |             85 |
 +----------------+----------------------------------------+-------------------------------+------------------+----------------+
 
 
@@ -81,7 +81,8 @@ Table of Contents
 | 3      |                     1 |
 | 4      |                     4 |
 | 5      |                     1 |
-| 7      |                     3 |
+| 6      |                     1 |
+| 7      |                     2 |
 | 8      |                     5 |
 | 9      |                     2 |
 | 16+    |                     3 |

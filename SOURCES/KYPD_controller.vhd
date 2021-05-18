@@ -170,7 +170,7 @@ process(CLK, RST)
 begin
     if (RST = '1') then
         DF <= '0';
-        Q <= '0';
+        Q <= '1';
     elsif (CLK'event and CLK = '1') then
        Q <= not ROW_OK;
        DF <= Q NOR ROW_OK;

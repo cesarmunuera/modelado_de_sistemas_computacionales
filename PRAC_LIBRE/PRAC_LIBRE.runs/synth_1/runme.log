@@ -14,28 +14,26 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4160 
+INFO: Helper process launched with PID 4348 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 346.152 ; gain = 101.422
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:24 . Memory (MB): peak = 344.438 ; gain = 101.266
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top_system' [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'KYPD_controller' [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd:14]
-INFO: [Synth 8-638] synthesizing module 'debounce_module' [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/debounce_module.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'debounce_module' (1#1) [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/debounce_module.vhd:14]
-INFO: [Synth 8-226] default block is never used [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd:112]
-INFO: [Synth 8-256] done synthesizing module 'KYPD_controller' (2#1) [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd:14]
-INFO: [Synth 8-638] synthesizing module 'mangm_KYPD' [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd:16]
-INFO: [Synth 8-226] default block is never used [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd:144]
-INFO: [Synth 8-226] default block is never used [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd:159]
-WARNING: [Synth 8-614] signal 'data_aux' is read in the process but is not in the sensitivity list [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd:157]
-WARNING: [Synth 8-614] signal 'data2_aux' is read in the process but is not in the sensitivity list [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd:157]
-INFO: [Synth 8-226] default block is never used [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd:172]
-INFO: [Synth 8-256] done synthesizing module 'mangm_KYPD' (3#1) [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd:16]
-INFO: [Synth 8-638] synthesizing module 'spi_controller' [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd:19]
-INFO: [Synth 8-256] done synthesizing module 'spi_controller' (5#1) [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd:19]
-INFO: [Synth 8-256] done synthesizing module 'top_system' (6#1) [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'top_system' [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'KYPD_controller' [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'debounce_module' [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/debounce_module.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'debounce_module' (1#1) [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/debounce_module.vhd:14]
+INFO: [Synth 8-226] default block is never used [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd:112]
+INFO: [Synth 8-256] done synthesizing module 'KYPD_controller' (2#1) [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'mangm_KYPD' [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd:16]
+INFO: [Synth 8-226] default block is never used [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd:144]
+INFO: [Synth 8-226] default block is never used [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd:159]
+INFO: [Synth 8-226] default block is never used [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd:172]
+INFO: [Synth 8-256] done synthesizing module 'mangm_KYPD' (3#1) [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'spi_controller' [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'spi_controller' (5#1) [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'top_system' (6#1) [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd:25]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 399.086 ; gain = 154.355
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 397.352 ; gain = 154.180
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -45,38 +43,38 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 399.086 ; gain = 154.355
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:28 . Memory (MB): peak = 397.352 ; gain = 154.180
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system.xdc]
-Finished Parsing XDC File [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_system_propImpl.xdc].
+Parsing XDC File [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.xdc]
+Finished Parsing XDC File [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_system_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_system_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 727.395 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.104 . Memory (MB): peak = 728.641 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 727.395 ; gain = 482.664
+Finished Constraint Validation : Time (s): cpu = 00:00:33 ; elapsed = 00:01:38 . Memory (MB): peak = 728.641 ; gain = 485.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 727.395 ; gain = 482.664
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:33 ; elapsed = 00:01:38 . Memory (MB): peak = 728.641 ; gain = 485.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 727.395 ; gain = 482.664
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:01:38 . Memory (MB): peak = 728.641 ; gain = 485.469
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "all_zeros" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "all_ones" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -159,7 +157,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_cfg_reg' using encod
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_dec_reg' using encoding 'sequential' in module 'oled_controller'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 727.395 ; gain = 482.664
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:01:41 . Memory (MB): peak = 728.641 ; gain = 485.469
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -355,7 +353,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_OLED/V
 INFO: [Synth 8-3886] merging instance 'U_OLED/VAL_TIME_reg[0]' (FDPE) to 'U_OLED/VBAT_reg'
 WARNING: [Synth 8-3332] Sequential element (U_OLED/VAL_TIME_reg[1]) is unused and will be removed from module top_system.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 727.395 ; gain = 482.664
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:01:48 . Memory (MB): peak = 728.641 ; gain = 485.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -382,13 +380,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 727.395 ; gain = 482.664
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:02:09 . Memory (MB): peak = 728.641 ; gain = 485.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 727.395 ; gain = 482.664
+Finished Timing Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:02:09 . Memory (MB): peak = 728.641 ; gain = 485.469
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -401,7 +399,7 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4480] The timing for the instance U_OLED/DOUT_dec_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 748.812 ; gain = 504.082
+Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:02:10 . Memory (MB): peak = 750.227 ; gain = 507.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -425,7 +423,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 748.812 ; gain = 504.082
+Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:02:11 . Memory (MB): peak = 750.227 ; gain = 507.055
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -438,7 +436,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 748.812 ; gain = 504.082
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:02:11 . Memory (MB): peak = 750.227 ; gain = 507.055
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -450,25 +448,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 748.812 ; gain = 504.082
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:57 ; elapsed = 00:02:11 . Memory (MB): peak = 750.227 ; gain = 507.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 748.812 ; gain = 504.082
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:57 ; elapsed = 00:02:11 . Memory (MB): peak = 750.227 ; gain = 507.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 748.812 ; gain = 504.082
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:02:11 . Memory (MB): peak = 750.227 ; gain = 507.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 748.812 ; gain = 504.082
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:02:11 . Memory (MB): peak = 750.227 ; gain = 507.055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -488,15 +486,15 @@ Report Cell Usage:
 |2     |CARRY4   |    10|
 |3     |LUT1     |     7|
 |4     |LUT2     |    41|
-|5     |LUT3     |    45|
+|5     |LUT3     |    44|
 |6     |LUT4     |    53|
 |7     |LUT5     |    39|
 |8     |LUT6     |    76|
 |9     |MUXF7    |     2|
 |10    |RAMB18E1 |     1|
 |11    |FDCE     |   217|
-|12    |FDPE     |     8|
-|13    |FDRE     |    11|
+|12    |FDPE     |     9|
+|13    |FDRE     |    10|
 |14    |IBUF     |     6|
 |15    |OBUF     |    24|
 +------+---------+------+
@@ -505,8 +503,8 @@ Report Instance Areas:
 +------+---------------+------------------+------+
 |      |Instance       |Module            |Cells |
 +------+---------------+------------------+------+
-|1     |top            |                  |   541|
-|2     |  U_KYPD       |KYPD_controller   |   124|
+|1     |top            |                  |   540|
+|2     |  U_KYPD       |KYPD_controller   |   123|
 |3     |    \db[0].U2  |debounce_module   |     6|
 |4     |    \db[1].U2  |debounce_module_0 |     8|
 |5     |    \db[2].U2  |debounce_module_1 |     6|
@@ -516,11 +514,11 @@ Report Instance Areas:
 |9     |  U_SPI        |spi_controller    |    50|
 +------+---------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 748.812 ; gain = 504.082
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:02:11 . Memory (MB): peak = 750.227 ; gain = 507.055
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 748.812 ; gain = 175.773
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 748.812 ; gain = 504.082
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:01:21 . Memory (MB): peak = 750.227 ; gain = 175.766
+Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:02:11 . Memory (MB): peak = 750.227 ; gain = 507.055
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -530,10 +528,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-86 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+86 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 748.812 ; gain = 517.105
-INFO: [Common 17-1381] The checkpoint 'C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/synth_1/top_system.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:58 ; elapsed = 00:02:23 . Memory (MB): peak = 750.227 ; gain = 520.039
+INFO: [Common 17-1381] The checkpoint 'C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.runs/synth_1/top_system.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_system_utilization_synth.rpt -pb top_system_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 748.812 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon May 17 12:32:41 2021...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.381 . Memory (MB): peak = 750.227 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue May 18 11:17:58 2021...
