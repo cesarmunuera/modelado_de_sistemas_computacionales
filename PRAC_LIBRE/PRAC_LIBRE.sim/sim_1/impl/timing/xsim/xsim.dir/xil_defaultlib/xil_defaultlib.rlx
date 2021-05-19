@@ -2,7 +2,7 @@
 2017.4
 Dec 15 2017
 21:07:18
-C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/impl/timing/xsim/top_system_tb_time_impl.v,1621421366,verilog,C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system_tb.vhd,,,top_system,,,,,,,,
+C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/PRAC_LIBRE/PRAC_LIBRE.sim/sim_1/impl/timing/xsim/top_system_tb_time_impl.v,1621438274,verilog,C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system_tb.vhd,,,top_system,,,,,,,,
 C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_device.vhd,1620664662,vhdl,C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system_tb.vhd,,,spi_device,,,,,,,,
 C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/teclado.vhdl,1620664662,vhdl,C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system_tb.vhd,,,teclado,,,,,,,,
 C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system_tb.vhd,1621244727,vhdl,,,,top_system_tb,,,,,,,,
