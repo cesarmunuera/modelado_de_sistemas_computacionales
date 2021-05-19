@@ -2,10 +2,10 @@
 2017.4
 Dec 15 2017
 21:07:18
-C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd,1621328365,vhdl,C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd;C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd,,,kypd_controller,,,,,,,,
+C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd,1621330778,vhdl,C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd;C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd,,,kypd_controller,,,,,,,,
 C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller_tb.vhd,1620664662,vhdl,,,,kypd_controller_tb,,,,,,,,
 C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/debounce_module.vhd,1620664662,vhdl,C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/KYPD_controller.vhd,,,debounce_module,,,,,,,,
-C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd,1621327744,vhdl,C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD_tb.vhd;C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd,,,mangm_kypd,,,,,,,,
+C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD.vhd,1621330818,vhdl,C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD_tb.vhd;C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd,,,mangm_kypd,,,,,,,,
 C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/mangm_KYPD_tb.vhd,1621244727,vhdl,,,,mangm_kypd_tb,,,,,,,,
 C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/oled_controller.vhdl,1620664662,vhdl,C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd,,,oled_controller,,,,,,,,
 C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller.vhd,1620664662,vhdl,C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_controller_tb.vhd;C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system.vhd,,,spi_controller,,,,,,,,

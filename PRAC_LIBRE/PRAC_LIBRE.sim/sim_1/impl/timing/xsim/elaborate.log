@@ -1,6 +1,6 @@
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: D:/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto a671aaf424804c16a1741828d68b636f --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot top_system_tb_time_impl -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.top_system_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto a671aaf424804c16a1741828d68b636f --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot top_system_tb_time_impl -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.top_system_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -29,14 +29,14 @@ Compiling module simprims_ver.x_lut1_mux2
 Compiling module simprims_ver.LUT1
 Compiling module simprims_ver.LUT6
 Compiling module simprims_ver.CARRY4
-Compiling module simprims_ver.FDRE_default
+Compiling module simprims_ver.FDPE_default
 Compiling module xil_defaultlib.debounce_module
 Compiling module xil_defaultlib.debounce_module_0
 Compiling module xil_defaultlib.debounce_module_1
 Compiling module xil_defaultlib.debounce_module_2
 Compiling module xil_defaultlib.KYPD_controller
+Compiling module simprims_ver.FDRE_default
 Compiling module xil_defaultlib.mangm_KYPD
-Compiling module simprims_ver.FDPE_default
 Compiling module simprims_ver.MUXF7
 Compiling module simprims_ver.RB18_INTERNAL_VLOG(RDADDR_COLLIS...
 Compiling module simprims_ver.RAMB18E1(INIT_10=256'b0101111100...

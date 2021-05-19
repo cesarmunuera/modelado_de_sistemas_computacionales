@@ -1,6 +1,6 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/teclado.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/teclado.vhdl" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity teclado
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/spi_device.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/spi_device.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity spi_device
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/cesar/Desktop/Uni/Programas varios/MSC/modelado_de_sistemas_computacionales/SOURCES/top_system_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity top_system_tb

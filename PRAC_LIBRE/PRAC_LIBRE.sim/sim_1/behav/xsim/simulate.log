@@ -1,5 +1,2 @@
 Vivado Simulator 2017.4
 Time resolution is 1 ps
-Failure: FIN CONTROLADO DE LA SIMULACION
-Time: 3005600 ns  Iteration: 0  Process: /top_system_tb/line__78  File: C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system_tb.vhd
-$finish called at time : 3005600 ns : File "C:/PRACTICA_LIBRE/modelado_de_sistemas_computacionales/SOURCES/top_system_tb.vhd" Line 88
