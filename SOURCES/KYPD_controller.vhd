@@ -44,7 +44,7 @@ begin
 
 -- En este proceso se modela el prescaler 1, para generar el clock enable del contador (CE_COL).
 process (CLK, RST)
-constant N1 : integer := 7;        -- 42 ms 
+constant N1 : integer := 7;        -- 49 ms (7 * 7ms del otro prescaler) 
 begin
     if (RST = '1') then
         CE_COL <= '0';
@@ -52,11 +52,11 @@ begin
     elsif (CLK'event and CLK = '1') then
         CE_COL <= '0';
         if(CE_ROW = '1') then
-            if (CONT = N1-1) then   --Cuando N es 5 , cambia el valor de CE_COL a 1.
+            if (CONT = N1-1) then   --Cuando N es 6 , cambia el valor de CE_COL a 1.
                 CONT <= (others => '0');
                 CE_COL <= '1';
             else
-                CONT <= CONT+1;     --Mientras que N es distinto 5, mantiene CE_COL a 0.
+                CONT <= CONT+1;     --Mientras que N es distinto 6, mantiene CE_COL a 0.
                 CE_COL <= '0';
             end if;
         end if;
@@ -64,9 +64,10 @@ begin
 end process;
 
 -- En este proceso se modela el prescaler 2, para generar el clock enable de las filas (CE_ROW).
+-- Tiene tamaño 7ms ya que T2*n >= 25ms. Entonces T2 es 7ms.
 process (CLK, RST)
 --constant N2 : integer := 700000;     -- 7ms
-constant N2 : integer := 70;     -- 7ms, pero con factor de escalada x10^-4 
+constant N2 : integer := 70;     -- 7ms, pero con factor de escalada x10^-4 para simulaciones
 begin
     if (RST = '1') then
         CE_ROW <= '0';

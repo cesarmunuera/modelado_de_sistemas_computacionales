@@ -110,7 +110,8 @@ begin
     --    2 decodificadores.
     
     -- En este proceso modelamos el prescaler. Es un contador ascendente de 0 que cuenta hasta 99.
-    -- Con este valor generamos la tasa de refresco.
+    -- Con este valor generamos la tasa de refresco. Es 3ms ya que se requiere que esté entre 1 y 16.
+    -- El nombre de la señal no se cambió con respecto a la que venía, pero se cuenta hasta 3 ms.
     process (clk, rst)
     begin
         if rst = '1' then
